@@ -1,4 +1,4 @@
-```markdown# Perdonla Portfolio Website
+# Perdonla Portfolio Website
 Welcome to the Perdonla Portfolio website! This site is designed to showcase my work and skills in web development and design.
 ## About the Portfolio
 This portfolio highlights various projects that demonstrate my abilities and creativity. It serves as a platform to present my work while offering an intuitive user experience.
@@ -27,4 +27,4 @@ The core programming language that powers the interactive elements and functiona
 - **Axios**: Employed to make HTTP requests to retrieve and send data efficiently.
 
 ## Conclusion
-The Perdonla Portfolio website showcases my technical skills and creativity through a modern technology stack, providing visitors with a professional and engaging experience. Explore my projects to see what I can create!```
+The Perdonla Portfolio website showcases my technical skills and creativity through a modern technology stack, providing visitors with a professional and engaging experience. Explore my projects to see what I can create!
