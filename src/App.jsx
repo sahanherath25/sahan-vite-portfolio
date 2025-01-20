@@ -1,25 +1,56 @@
-import { useState } from 'react'
+import {useEffect, useState} from 'react'
+
+import {BrowserRouter, Route, Routes,Navigate} from "react-router-dom";
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
+import AppLayout from "./ui/AppLayout.jsx";
+import Home from "./pages/Home.jsx";
+import Contact from "./pages/Contact.jsx";
+import Projects from "./pages/Projects.jsx";
+import Courses from "./pages/Courses.jsx";
+import GlobalStyles from "./styles/GlobalStyles.js";
+import initAOS from "./aos/aos.js";
+import "./styles/mixins/_mixins.scss"
+import Test from "./pages/Test.jsx";
+import AOSConfig from "./aos/aos.js";
+
+
+const queryClient = new QueryClient({
+    defaultOptions: {
+        queries: {
+            staleTime: 60 * 1000
+        }
+    }
+});
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
+    // useEffect(()=>{
+    //     new AOSConfig()
+    // })
 
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+    return (
+        <QueryClientProvider client={queryClient}>
+            <ReactQueryDevtools initialIsOpen={false}/>
+            <GlobalStyles/>
+                <BrowserRouter>
+                    <Routes>
+                        <Route element={<AppLayout/>}>
+                            <Route path={"/"} element={<Navigate replace to={"home"}/>}/>
+                            <Route path={"home"} element={<Home/>}/>
+                            <Route path={"contact"} element={<Contact/>}/>
+                            <Route path={"courses"} element={<Courses/>}/>
+                            <Route path={"projects"} element={<Projects/>}/>
+                            <Route path={"test"} element={<Test/>}/>
+                        </Route>
+                    </Routes>
+                </BrowserRouter>
+
+        </QueryClientProvider>
+
+    )
 }
 
 export default App

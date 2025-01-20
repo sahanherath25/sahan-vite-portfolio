@@ -1,0 +1,30 @@
+@mixin tablet-landscape {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait {
+  @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+
+@mixin btn-styles($text-color,$bg-color){
+
+  color: $text-color;
+  background-color: $bg-color;
+  border: 1px solid red;
+}
+
+
+//@function getFontSize($num1,$num2){
+//  @return ($num1 +$num2 )/2;
+//}
