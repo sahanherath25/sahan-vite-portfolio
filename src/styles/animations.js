@@ -58,6 +58,17 @@ export const colorEffectAnimation = keyframes`
   }
 `;
 
+export const fireworkAnimation  = keyframes`
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+`
+
 export const colorEffectAnimationForH1 = keyframes`
   0% {
     color: #001220;
@@ -71,7 +82,7 @@ export const colorEffectAnimationForH1 = keyframes`
     color: #001220;
     background-color: transparent;
   }
-`;
+`
 
 export const borderEffectAnimation = keyframes`
   0% {
@@ -86,7 +97,7 @@ export const borderEffectAnimation = keyframes`
     border-color: whitesmoke;
     background-color: transparent;
   }
-`;
+`
 
 export const boxShadowEffectAnimation = keyframes`
   0% {
@@ -104,5 +115,5 @@ export const boxShadowEffectAnimation = keyframes`
     background-color: #0e0d0d;
     box-shadow: 0 0 5px #007bff;
   }
-`;
+`
 

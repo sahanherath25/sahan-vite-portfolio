@@ -111,12 +111,12 @@ const StyledHeader = () => {
                 <MenuItem className={path === "/contact" ? "active" : ""}>
                     <Link onClick={closeHeader} to="/contact">Contact</Link>
                 </MenuItem>
-                <MenuItem className={path === "/test" ? "active" : ""}>
-                    <Link onClick={closeHeader} to="/Test">Test</Link>
-                </MenuItem>
-                <MenuItem className={path === "/geoLocation" ? "active" : ""}>
-                    <Link onClick={closeHeader} to="/geoLocation">Location</Link>
-                </MenuItem>
+                {/*<MenuItem className={path === "/test" ? "active" : ""}>*/}
+                {/*    <Link onClick={closeHeader} to="/Test">Test</Link>*/}
+                {/*</MenuItem>*/}
+                {/*<MenuItem className={path === "/geoLocation" ? "active" : ""}>*/}
+                {/*    <Link onClick={closeHeader} to="/geoLocation">Location</Link>*/}
+                {/*</MenuItem>*/}
             </MenuList>
         </HeaderContainer>
     );

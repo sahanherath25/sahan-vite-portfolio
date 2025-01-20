@@ -4,13 +4,25 @@ import {
     colorEffectAnimation,
     colorEffectAnimationForH1,
     glowingEffect,
-    glowingEffectForH1
+    glowingEffectForH1,
+    fireworkAnimation
 } from "../../styles/animations.js";
-import {SiExpertsexchange} from "react-icons/si";
-import {FaArrowAltCircleLeft, FaArrowAltCircleRight, FaAws, FaRobot} from "react-icons/fa";
+import {
+    Si365Datascience,
+    SiCopaairlines,
+    SiExpertsexchange,
+    SiReacthookform, SiReactquery,
+    SiReactrouter, SiRedux,
+    SiServerless, SiStyledcomponents
+} from "react-icons/si";
+import {FaArrowAltCircleLeft, FaArrowAltCircleRight, FaAws, FaNodeJs, FaReact, FaRobot} from "react-icons/fa";
 import {FcBiotech} from "react-icons/fc";
 import {RiRobot2Fill} from "react-icons/ri";
-import {TbRobot} from "react-icons/tb";
+import {TbBrandRedux, TbRobot} from "react-icons/tb";
+import {IoCloudSharp} from "react-icons/io5";
+import {LiaAsymmetrik} from "react-icons/lia";
+import {VscAzureDevops} from "react-icons/vsc";
+import {IoLogoJavascript} from "react-icons/io";
 
 
 const StyledContainer = styled.section`
@@ -99,9 +111,24 @@ const StyledLi = styled.li`
   margin: 10px 0;
   cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease;
+  
+  
 
   &:hover {
     ${hoverEffect}
+  }
+
+
+  &:hover::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: url('firework-icon.gif') no-repeat center center;
+    background-size: contain;
+    animation: fireworkAnimation 1s forwards;
   }
 `;
 
@@ -125,14 +152,15 @@ const Skills = ({dataAOS1, dataAOS2, dataAOS3}) => {
                 <P>I have strong knowledge in JavaScript and React, along with expertise in Node.js. I have
                     worked with various JavaScript libraries and tools, including:</P>
                 <StyledUl>
-                    <StyledLi> <FaArrowAltCircleRight/> React</StyledLi>
-                    <StyledLi> <FaArrowAltCircleRight/>JavaScript</StyledLi>
-                    <StyledLi><FaArrowAltCircleRight/> Redux</StyledLi>
-                    <StyledLi> <FaArrowAltCircleRight/> React Query</StyledLi>
-                    <StyledLi><FaArrowAltCircleRight/> Redux Toolkit</StyledLi>
-                    <StyledLi><FaArrowAltCircleRight/> React Hook Form</StyledLi>
-                    <StyledLi><FaArrowAltCircleRight/> Node Js</StyledLi>
-                    <StyledLi><FaArrowAltCircleRight/> Styled Components</StyledLi>
+                    <StyledLi> <FaReact /> React</StyledLi>
+                    <StyledLi> <IoLogoJavascript />JavaScript</StyledLi>
+                    <StyledLi><SiRedux />Redux</StyledLi>
+                    <StyledLi> <SiReactquery />React Query</StyledLi>
+                    <StyledLi><TbBrandRedux /> Redux Toolkit</StyledLi>
+                    <StyledLi><SiReacthookform /> React Hook Form</StyledLi>
+                    <StyledLi><SiReactrouter /> React Router 6</StyledLi>
+                    <StyledLi><FaNodeJs /> Node Js</StyledLi>
+                    <StyledLi><SiStyledcomponents />Styled Components</StyledLi>
                 </StyledUl>
             </StyledLeftContainer>
             <StyledMiddleContainer className={"middle-container"}>
@@ -171,8 +199,9 @@ const Skills = ({dataAOS1, dataAOS2, dataAOS3}) => {
                             include</P>
                         <StyledUl>
                             <StyledLi> <FaAws size={25} /> AWS (Amazon Web Services)</StyledLi>
-                            <StyledLi> <FaRobot /> Artificial IntelStyledLigence (AI)</StyledLi>
-                            <StyledLi> <TbRobot /> Machine Learning (ML)</StyledLi>
+                            <StyledLi> <FaRobot size={25}  /> Artificial IntelStyledLigence (AI)</StyledLi>
+                            <StyledLi> <TbRobot size={25}   /> Machine Learning (ML)</StyledLi>
+                            <StyledLi> <Si365Datascience size={25}  /> Data Science</StyledLi>
                         </StyledUl>
                     </div>
                 </div>
@@ -188,16 +217,20 @@ const Skills = ({dataAOS1, dataAOS2, dataAOS3}) => {
                 <div className="col-md-4 ">
                     <div className="n-box-2 px-3 py-5">
 
-                        <H1>Exploring the Future: AI, Machine Learning, and Cloud Technologies</H1>
+                        <H1>  <IoCloudSharp />  Passionate About Cloud Technologies and Architecture: AWS and Microsoft Azure</H1>
                         <hr/>
-                        <P className={"bold"}>I am also passionate about programming languages such as Java and Python,
-                            and have hands-on experience with React Native for mobile app development. My backend
-                            expertise includes working with
+                        <P> I am eager to expand my knowledge and skills in cloud technologies, focusing on cloud architecture and
+                        services provided by AWS and Microsoft Azure. My interest lies in exploring cloud-native solutions,
+                        deployment, and scalable infrastructure.
                         </P>
                         <StyledUl>
                             <StyledLi>AWS (Amazon Web Services)</StyledLi>
-                            <StyledLi>Artificial IntelStyledLigence (AI)</StyledLi>
-                            <StyledLi>Machine Learning (ML)</StyledLi>
+                            <StyledLi> <FaArrowAltCircleLeft /> Microsoft Azure</StyledLi>
+                            <StyledLi> <FaArrowAltCircleLeft /> Cloud Architecture Design</StyledLi>
+                            <StyledLi>  <LiaAsymmetrik /> Infrastructure as a Service (IaaS)</StyledLi>
+                            <StyledLi>  <SiCopaairlines /> Platform as a Service (PaaS)</StyledLi>
+                            <StyledLi> <SiServerless /> Serverless Computing</StyledLi>
+                            <StyledLi>  <VscAzureDevops /> DevOps and CI/CD</StyledLi>
                         </StyledUl>
                     </div>
 

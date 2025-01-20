@@ -43,7 +43,6 @@ function App() {
                             <Route path={"contact"} element={<Contact/>}/>
                             <Route path={"courses"} element={<Courses/>}/>
                             <Route path={"projects"} element={<Projects/>}/>
-                            <Route path={"test"} element={<Test/>}/>
                         </Route>
                     </Routes>
                 </BrowserRouter>

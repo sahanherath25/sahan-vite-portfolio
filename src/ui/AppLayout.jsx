@@ -4,6 +4,7 @@ import {Outlet} from "react-router-dom"
 import Hero from "./Hero.jsx";
 import Header from "./Header.jsx";
 import StyledHeader from "./StyledHeader.jsx";
+import Footer from "./Footer.jsx";
 
 const StyledAppLayout = styled.div`
   
@@ -45,6 +46,7 @@ const AppLayout = () => {
                     <Outlet/>
                 </Container>
             </Main>
+            <Footer/>
         </StyledAppLayout>
     )
 }

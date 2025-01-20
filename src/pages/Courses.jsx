@@ -12,9 +12,7 @@ const Courses=()=>{
 
     return(
         <div>
-
-            <h1 data-aos="fade-right">Hello</h1>
-
+            <h1 data-aos="fade-right"> Under Development</h1>
         </div>
     )
 }

@@ -72,8 +72,8 @@ const Intro = ({handleClick}) => {
                 <StyledIntroContent className="intro-content">
                     <P>Frontend <br/>Developer </P>
                     {/*<UIButton  type={"submit"} onClick={getStart}>Get Start</UIButton>*/}
-                    <Button type={"button"} onClick={getStart} className={"primary-button btn-lg bold "}>Get
-                        Started</Button>
+                    <UIButton hoverBgColor={"#872341"} type={"button"} bgColor={"#BE3144"} textColor={"#fff"} onClick={getStart} className={"primary-button btn-lg bold "}>Get
+                        Started</UIButton>
                 </StyledIntroContent>
             </StyledInnerWrapper>
         </StyledIntroContainer>
