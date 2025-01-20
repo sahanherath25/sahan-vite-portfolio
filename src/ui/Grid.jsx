@@ -32,7 +32,7 @@ const Grid = ({data}) => {
     }, []);
 
     return (
-        <StyledGrid data-aos={"flip-left"}>
+        <StyledGrid data-aos={"zoom-in-up"}>
 
             {/*{data? (*/}
             {/*    data.map(() => {*/}

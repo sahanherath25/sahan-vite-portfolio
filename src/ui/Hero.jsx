@@ -11,7 +11,7 @@ const Hero = ({dataAOS,dataAOS2}) => {
     return (
         <div   className={"hero-container"} >
             <div className="content-wrapper">
-                <div className="left-container"  data-aos={"zoom-in-up"} >
+                <div className="left-container"   >
 
                     <h2 className="h2-name">Sahan Herath</h2>
                     <h4>Frontend Web Developer</h4>
@@ -26,7 +26,7 @@ const Hero = ({dataAOS,dataAOS2}) => {
                         <a href="./" className="projects link">Projects</a>
                     </div>
                 </div>
-                <div className="right-container" data-aos={"zoom-in-up"} >
+                <div className="right-container"  >
                     <div className="description">
                         <p>Hi, I’m Sahan Herath, a dedicated Frontend Web Developer with a passion for creating visually
                             stunning and highly responsive web applications. With a strong foundation in HTML, CSS, and

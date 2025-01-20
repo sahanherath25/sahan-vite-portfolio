@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {forwardRef, useEffect} from "react";
 import initAOS from "../../aos/aos.js";
 import AOS from "aos"
-import {FaJava, FaPython, FaReact, FaSass} from "react-icons/fa";
+import {FaCss3Alt, FaDocker, FaGit, FaGithub, FaJava, FaPython, FaReact, FaSass} from "react-icons/fa";
 import {RiNodejsLine, RiSupabaseFill} from "react-icons/ri";
 import {SiExpress, SiMysql, SiStyledcomponents} from "react-icons/si";
 import {IoLogoJavascript} from "react-icons/io";
@@ -29,10 +29,11 @@ const TechContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-items: center;
   alignment-baseline: center;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
-  border: 1px solid orangered;
+  //border: 1px solid orangered;
   padding: 20px 20px;
 
 `
@@ -65,6 +66,10 @@ const Technologies = forwardRef( (props, ref)=> {
                 <Technology> <FaPython/> Python</Technology>
                 <Technology> <SiStyledcomponents /> Styled Components</Technology>
                 <Technology> <FaSass /> SASS</Technology>
+                <Technology> <FaCss3Alt />CSS</Technology>
+                <Technology> <FaDocker /> Docker</Technology>
+                <Technology> <FaGit /> Git</Technology>
+                <Technology> <FaGithub />Github</Technology>
                 <Technology> <TbBrandReactNative /> React Native</Technology>
                 <Technology> <RiSupabaseFill /> Supabase </Technology>
                 <Technology> <SiMysql /> MySQL</Technology>

@@ -26,9 +26,9 @@ const MenuList = styled.ul`
   top: 0;
   right: 0;
   height: 100vh;
-  width: 100%;
+  width: 60%;
   background-color: #001220;
-  z-index: 2;
+  z-index: 3;
   border-bottom-left-radius: 50%;
   border-top-left-radius: 50%;
   display: flex;
@@ -40,8 +40,8 @@ const MenuList = styled.ul`
   transition: all 0.3s;
 
   ${(props) =>
-          props.isTabletLandscape &&
-          css`
+    props.isTabletLandscape &&
+    css`
       border-top-left-radius: unset;
       border-bottom-left-radius: 50%;
       height: 60%;
@@ -73,16 +73,18 @@ const MenuItem = styled.li`
   }
 `;
 
-const Header = () => {
-    const [showHeader, setShowHeader] = useState(false);
-    const path = window.location.pathname;
 
-    console.log("Path ", path);
 
-    return (
-        <HeaderContainer >
-            {showHeader ? (
-                <MenuIcon onClick={() => setShowHeader(!showHeader)}>
+const StyledHeader = () => {
+  const [showHeader, setShowHeader] = useState(false);
+  const path = window.location.pathname;
+
+  console.log("Path ", path);
+
+  return (
+      <HeaderContainer >
+          {showHeader ? (
+              <MenuIcon onClick={() => setShowHeader(!showHeader)}>
                     <RiCloseFill />
                 </MenuIcon>
             ) : (
@@ -115,4 +117,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default StyledHeader;

@@ -1,5 +1,5 @@
 import React, {forwardRef, useState} from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import Experiences from "../../ui/Experiences.jsx";
 import Experience from "../../ui/Experience.jsx";
 
@@ -59,14 +59,20 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   transition: opacity 0.3s ease, transform 0.3s ease, right 0.3s ease;
+  
+
+
 
   &:hover {
     right: -10px;
     opacity: 1;
     background-color: transparent;
     transform: scale(1.05) translateX(40px);
-
   }
+
+  ${(props)=> props.type==="special" && css`
+    color: yellowgreen;
+  `}
 
   &::before {
     opacity: 0.6;
@@ -85,6 +91,8 @@ const Button = styled.button`
     opacity: 1;
     //background-color: red; // Change line background color
   }
+
+
 
 `
 
@@ -115,35 +123,35 @@ const H3 = styled.h3`
 `
 
 const P = styled.p`
-  
+
   margin-block-start: 8px;
   color: whitesmoke;
   opacity: 0.7;
-  
-`
-
-const InnerRightWrapper=styled.div`
-
 
 `
 
-const ProjectsSection =forwardRef( ({ techHandle, sahan }, ref) => {
+const InnerRightWrapper = styled.div`
+
+
+`
+
+const ProjectsSection = forwardRef(({techHandle, sahan}, ref) => {
 
     const [isVisible, setIsVisible] = useState(false);
 
     // console.log("PROJECSTS REF",sahan)
     // console.log("PROJECSTS REF",techHandle)
 
-    const handleClick=()=>{
+    const handleClick = () => {
 
         techHandle()
     }
 
 
     return (
-        <StyledContainer as={"section"} ref={ref}    >
+        <StyledContainer as={"section"} ref={ref}>
 
-            <LeftContainer >
+            <LeftContainer>
                 <H1>Sahan Herath </H1>
                 <H3>Software Engineer</H3>
                 <P>I Build pixel Perfect Engaging And Acessible digitial EXperiences</P>
@@ -153,36 +161,36 @@ const ProjectsSection =forwardRef( ({ techHandle, sahan }, ref) => {
                     <Button>About</Button>
                     <Button>Experience</Button>
                     <Button>Projects</Button>
-                    <Button onClick={handleClick}>Tech Stack</Button>
+                    <Button type={"special"} onClick={handleClick}>Tech Stack</Button>
                 </ButtonGroup>
             </LeftContainer>
             <RightContainer>
 
-                    <P>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam deleniti dignissimos
-                        dolore dolorem dolores ea earum, harum impedit ipsa itaque, libero obcaecati placeat possimus
-                        provident quisquam sapiente? Animi asperiores culpa cum cumque, cupiditate delectus, dolore dolorem
-                        ea eaque eligendi facilis iste itaque natus nulla, optio porro quos repudiandae sapiente voluptas
-                    </P>
+                <P>
+                    Enthusiastic software engineer with hands-on experience in front-end development, specializing in
+                    the creation of web and mobile applications. With a solid foundation in software engineering
+                    principles and a passion for user-friendly design, I am eager to leverage my skills to help
+                    organizations achieve their goals. As a recent graduate, I am actively seeking a role in Software
+                    Engineering to further develop my expertise and make a meaningful impact.
 
-                    <P>
-                        laudantium magni, nam nemo officiis pariatur provident quisquam rerum sequi ullam unde vitae
-                        voluptate. Ad alias atque aut cumque error facilis harum itaque libero natus obcaecati officia
-                        pariatur perferendis possimus provident similique sint, ut veritatis? Aliquam at consectetur eius
-                        error et ex laborum ratione sit ullam? Beatae mollitia nisi provident ullam velit voluptas. Commodi
-                        consequatur, doloribus in nemo repudiandae vel! Ab adipisci aliquam aperiam consequuntur, dolor
-                        dolore expedita fuga incidunt inventore iusto laboriosam laborum libero, maiores mollitia neque non
-                    </P>
+                </P>
 
-                    <P>
-                        nulla, optio quia recusandae rem repellat ullam vel voluptatem! Deserunt ipsam magni perferendis
-                        quidem. Ad delectus earum hic impedit mollitia nulla quis repellat repudiandae. Culpa doloribus
-                        fugiat, illo magnam minus officiis porro quo!
-                    </P>
+                <P>
+                    My areas of expertise include:
+                    HTML, CSS, JavaScript, React, React Native , Java, Python responsive design, user experience
+                    (UX)
+                    optimization, modern frameworks (React,), Docker, AWS, web accessibility, team collaboration,
+                    problem-solving, and continuous learning.
+                </P>
+
+                <P>
+                    I am always eager to take on new challenges and inspire my peers to excel. Guiding fellow developers
+                    to push their boundaries and unleash their creativity is what truly motivates me. Let's connect and
+                    explore the innovative solutions we can build together!
+                </P>
+
 
                 <Experiences>
-                    <Experience/>
-                    <Experience/>
                     <Experience/>
                 </Experiences>
 

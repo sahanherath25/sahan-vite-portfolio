@@ -4,6 +4,7 @@ import {useRef} from "react";
 import bgImage from "../assets/images/circle-scatter-haikei2.svg";
 import styled from "styled-components";
 import Button from "./Button.jsx";
+import UIButton from "./UIButton.jsx";
 
 
 const StyledIntroContainer = styled.div`
@@ -42,7 +43,7 @@ const H1 = styled.h1`
 `
 
 const StyledIntroContent = styled.div`
-  border: 1px solid whitesmoke;
+  //border: 1px solid whitesmoke;
   display: flex;
   margin-block-start: 20px;
   align-items: center;
@@ -67,9 +68,10 @@ const Intro = ({handleClick}) => {
             <div className="overlay" >
             </div>
             <StyledInnerWrapper className={"inner-wrapper"}>
-                <H1 as={"h1"}>Sahan</H1>
+                <H1 as={"h1"}> I'm Sahan</H1>
                 <StyledIntroContent className="intro-content">
                     <P>Frontend <br/>Developer </P>
+                    {/*<UIButton  type={"submit"} onClick={getStart}>Get Start</UIButton>*/}
                     <Button type={"button"} onClick={getStart} className={"primary-button btn-lg bold "}>Get
                         Started</Button>
                 </StyledIntroContent>

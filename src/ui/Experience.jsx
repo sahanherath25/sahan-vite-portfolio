@@ -9,7 +9,7 @@ const StyledContainer = styled.div`
   width: 100%;
   color: white;
   display: flex;
-  border: 1px solid #ccc;
+  //border: 1px solid #ccc;
   transition: all 0.3s ease;
 
   &:last-child {
@@ -40,31 +40,33 @@ const StyledContainer = styled.div`
         color: #00FFCA;
       }
     }
-    
+
   }
 
-  .period{
+  .period {
     display: flex;
     justify-content: space-between;
-    h4{
+
+    h4 {
       color: #948c8c;
-      font-size:25px;
+      font-size: 25px;
     }
 
 
     flex-basis: 30%;
   }
 
-  .content{
+  .content {
     flex-basis: 70%;
-    h3{
+
+    h3 {
       color: white;
       width: 100%;
-      font-size:24px;
+      font-size: 24px;
       transition: color 0.5s ease-in-out;
     }
 
-    p{
+    p {
       color: #948c8c;
     }
 
@@ -94,14 +96,16 @@ const Experience = () => {
     return (
         <StyledContainer className={" experiences"} onMouseMove={handleMouseMove} style={bgStyle}>
             <div className="period">
-                <h4>2023-2025</h4>
+                <h4>2022-2024</h4>
             </div>
             <div className="content">
                 <h3>Frontend Web Developer</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam asperiores error et, ex
-                    exercitationem laborum molestias natus odio quo rerum tempora tempore vero? A iure non officiis
-                    pariatur quod saepe ut voluptates. Deleniti fuga illum nobis nostrum nulla obcaecati odit, quae
-                    quaerat repellat sequi similique unde veritatis vitae voluptate?
+                <p>
+                    As a Software Engineer with over year and a half of expertise in web development, I have a strong
+                    track record of designing and building scalable web applications from the ground up. My journey into
+                    technology began with a deep curiosity about how software can solve real-world challenges, driving
+                    me to excel in both front-end and back-end development.
+
                 </p>
             </div>
         </StyledContainer>

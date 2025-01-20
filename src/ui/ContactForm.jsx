@@ -20,15 +20,21 @@ const Form = styled.form`
   color: #f6f6f6;
   width: 100%;
   background-color: #0e0d0d;
+  padding: 50px 0 ;
 
 
   ${breakpoints.tabletPortrait`
     padding: 20px;
     background-color: lightblue;
-  `} /* Tablet Landscape styles */ ${breakpoints.tabletLandscape`
+  `} 
+    
+    /* Tablet Landscape styles */ 
+  ${breakpoints.tabletLandscape`
     padding: 30px;
     background-color: lightgreen;
-  `} /* Desktop styles */ ${breakpoints.desktop`
+  `} 
+    
+    /* Desktop styles */ ${breakpoints.desktop`
     padding: 40px;
     background-color: #0e0d0d;
   `}
@@ -95,7 +101,7 @@ const H1 = styled.h1`
   transform: translateX(-50%); /* Centers horizontally */
   text-align: center;
   color: white;
-  z-index: 10;
+  z-index: 2;
 
   animation: ${glowingEffect};
 

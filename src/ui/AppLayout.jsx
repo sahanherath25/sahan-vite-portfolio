@@ -1,8 +1,9 @@
 import React from "react";
 import styled, {css} from "styled-components";
 import {Outlet} from "react-router-dom"
-import Header from "./Header.jsx";
 import Hero from "./Hero.jsx";
+import Header from "./Header.jsx";
+import StyledHeader from "./StyledHeader.jsx";
 
 const StyledAppLayout = styled.div`
   
@@ -38,6 +39,7 @@ const AppLayout = () => {
             {/*<h1>HEADER SECTION</h1>*/}
             {/*<Hero/>*/}
 
+            <StyledHeader/>
             <Main>
                 <Container>
                     <Outlet/>

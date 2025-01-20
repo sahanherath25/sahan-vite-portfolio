@@ -17,6 +17,7 @@ import AOS from "aos";
 
 
 import 'aos/dist/aos.css';
+import UIButton from "../ui/UIButton.jsx";
 
 const H1 = styled.h1`
   color: wheat;
@@ -57,8 +58,6 @@ const RightContainer = styled.div`
 `
 
 const Projects = () => {
-
-
     const {data, isLoading} = useQuery({
         queryKey: ["projects"],
         queryFn: getProjectData
@@ -73,6 +72,7 @@ const Projects = () => {
             })
         }
     })
+
     useEffect(() => {
         initAOS()
 
@@ -82,8 +82,6 @@ const Projects = () => {
     return (
 
         <section>
-
-            <Header/>
 
             <StyledContainer className="header" data-aos={"fade-in"}>
 
@@ -107,7 +105,7 @@ const Projects = () => {
                             animi consectetur, consequatur dignissimos magni minus porro quisquam quos ut voluptate.
                         </p>
 
-                        <button className={"primary-button btn-lg"}>Get Started</button>
+                        <UIButton >Get Started</UIButton>
                     </LeftContainer>
 
                     <RightContainer className="right container ">
@@ -136,7 +134,6 @@ const Projects = () => {
             </StyledContainer>
 
             <Grid/>
-
 
         </section>
     )
