@@ -18,6 +18,7 @@ import AOS from "aos";
 
 import 'aos/dist/aos.css';
 import UIButton from "../ui/UIButton.jsx";
+import Skills from "../features/skills/Skills.jsx";
 
 const H1 = styled.h1`
   color: wheat;
@@ -86,8 +87,9 @@ const Projects = () => {
             <StyledContainer className="header" data-aos={"fade-in"}>
 
                 <Row>
-                    <H1>Innovative Software Solutions Crafted with Modern Technologies*</H1>
+                    <H1>React and JavaScript Developer</H1>
 
+                    
                     <p>
                         Welcome to my Projects Showcase! Here, you will find a collection of my most notable projects,
                         developed with cutting-edge technologies like Vite and React. Each project reflects my
@@ -95,6 +97,7 @@ const Projects = () => {
                         building functional, efficient, and user-friendly applications. Click on the project titles to
                         explore detailed descriptions and insights into my development process.
                     </p>
+                    
                 </Row>
 
 
@@ -129,6 +132,8 @@ const Projects = () => {
 
                     </RightContainer>
                 </ProjectContainer>
+
+                <Skills  dataAOS2={"zoom-in-up"} />
 
 
             </StyledContainer>

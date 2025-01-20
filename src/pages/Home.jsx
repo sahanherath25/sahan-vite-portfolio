@@ -65,7 +65,7 @@ const Home = () => {
             <ProjectsSection ref={projectSectionRef} sahan={true} techHandle={handleScrollToTechStack}/>
             <Technologies  ref={TechnologiesRef}/>
             <ContactForm/>
-            <Skills/>
+            <Skills />
             <WaveEnd/>
 
 

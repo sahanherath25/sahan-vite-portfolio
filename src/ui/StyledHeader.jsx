@@ -81,6 +81,11 @@ const StyledHeader = () => {
 
   console.log("Path ", path);
 
+  const closeHeader=()=>{
+
+      setShowHeader(false)
+  }
+
   return (
       <HeaderContainer >
           {showHeader ? (
@@ -95,22 +100,22 @@ const StyledHeader = () => {
 
             <MenuList show={showHeader?'true' : undefined}>
                 <MenuItem className={path === "/" ? "active" : ""}>
-                    <Link to="/">Home</Link>
+                    <Link to="/" onClick={closeHeader}>Home</Link>
                 </MenuItem>
                 <MenuItem className={path === "/projects" ? "active" : ""}>
-                    <Link to="/projects">Projects</Link>
+                    <Link onClick={closeHeader} to="/projects">Projects</Link>
                 </MenuItem>
                 <MenuItem className={path === "/courses" ? "active" : ""}>
-                    <Link to="/courses">Courses</Link>
+                    <Link onClick={closeHeader} to="/courses">Courses</Link>
                 </MenuItem>
                 <MenuItem className={path === "/contact" ? "active" : ""}>
-                    <Link to="/contact">Contact</Link>
+                    <Link onClick={closeHeader} to="/contact">Contact</Link>
                 </MenuItem>
                 <MenuItem className={path === "/test" ? "active" : ""}>
-                    <Link to="/Test">Test</Link>
+                    <Link onClick={closeHeader} to="/Test">Test</Link>
                 </MenuItem>
                 <MenuItem className={path === "/geoLocation" ? "active" : ""}>
-                    <Link to="/geoLocation">Location</Link>
+                    <Link onClick={closeHeader} to="/geoLocation">Location</Link>
                 </MenuItem>
             </MenuList>
         </HeaderContainer>

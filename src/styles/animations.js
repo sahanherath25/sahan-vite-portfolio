@@ -31,6 +31,17 @@ export const glowingEffect=keyframes`
 
 `
 
+export const glowingEffectForH1=keyframes`
+
+  0% {
+    text-shadow: 0 0 5px #001220, 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 75px #ff0000;
+  }
+  100% {
+    text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 25px #ff0000, 0 0 35px #ff0000, 0 0 45px #ff0000, 0 0 60px #ff0000, 0 0 100px #ff0000;
+  }
+
+`
+
 
 export const colorEffectAnimation = keyframes`
   0% {
@@ -43,6 +54,21 @@ export const colorEffectAnimation = keyframes`
   }
   100% {
     color: whitesmoke;
+    background-color: transparent;
+  }
+`;
+
+export const colorEffectAnimationForH1 = keyframes`
+  0% {
+    color: #001220;
+    background-color: transparent;
+  }
+  50% {
+    color: transparent;
+    background-color: transparent;
+  }
+  100% {
+    color: #001220;
     background-color: transparent;
   }
 `;
