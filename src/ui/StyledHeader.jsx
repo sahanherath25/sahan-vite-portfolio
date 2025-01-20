@@ -93,7 +93,7 @@ const StyledHeader = () => {
                 </MenuIcon>
             )}
 
-            <MenuList show={showHeader}>
+            <MenuList show={showHeader?'true' : undefined}>
                 <MenuItem className={path === "/" ? "active" : ""}>
                     <Link to="/">Home</Link>
                 </MenuItem>

@@ -75,7 +75,7 @@ const UIButton = ({
                 }) => {
   return (
       <StyledButton
-          type
+          type={type}
           onClick={onClick}
           bgColor={bgColor}
           textColor={textColor}

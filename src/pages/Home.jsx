@@ -62,7 +62,6 @@ const Home = () => {
                 <Intro  handleClick={handleScrollToProjects} />
         </div>
 
-            <SwiperComponent />
             <ProjectsSection ref={projectSectionRef} sahan={true} techHandle={handleScrollToTechStack}/>
             <Technologies  ref={TechnologiesRef}/>
             <ContactForm/>
