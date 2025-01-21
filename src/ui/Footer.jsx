@@ -31,7 +31,7 @@ const blink = keyframes`
 // Styled components
 const FooterWrapper = styled.footer`
 
-  background: linear-gradient(135deg, #282c34, #1c1f26);
+  background: linear-gradient(135deg, #001220, #001220);
   color: #fff;
   padding: 2rem 1rem;
   text-align: center;
@@ -102,7 +102,7 @@ const FooterText = styled.p`
 `;
 
 const WrapperSection = styled.section`
-  background: linear-gradient(135deg, #282c34, #1c1f26);
+  background: linear-gradient(135deg, #001220, #001220);
   color: #fff;
   display: flex;
   flex-direction: column;

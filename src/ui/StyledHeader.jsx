@@ -4,6 +4,7 @@ import { RiMenuFill, RiCloseFill } from "react-icons/ri";
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import breakpoints from "../styles/breakpoints.jsx";
+import {FaArrowAltCircleRight} from "react-icons/fa";
 
 // Styled components
 const HeaderContainer = styled.div`
@@ -56,6 +57,10 @@ const MenuItem = styled.li`
   color: whitesmoke;
   text-decoration: none;
   margin-block-start: 25px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-start;
 
   a {
     color: whitesmoke;
@@ -102,16 +107,16 @@ const StyledHeader = () => {
 
             <MenuList show={showHeader?'true' : undefined}>
                 <MenuItem className={path === "/" ? "active" : ""}>
-                    <Link to="/" onClick={closeHeader}>Home</Link>
+                    <FaArrowAltCircleRight size={20} />  <Link to="/" onClick={closeHeader}>Home</Link>
                 </MenuItem>
                 <MenuItem className={path === "/projects" ? "active" : ""}>
-                    <Link onClick={closeHeader} to="/projects">Projects</Link>
+                    <FaArrowAltCircleRight size={20}   />  <Link onClick={closeHeader} to="/projects">Projects</Link>
                 </MenuItem>
                 <MenuItem className={path === "/courses" ? "active" : ""}>
-                    <Link onClick={closeHeader} to="/courses">Courses</Link>
+                    <FaArrowAltCircleRight size={20}  /> <Link onClick={closeHeader} to="/courses"> Courses</Link>
                 </MenuItem>
                 <MenuItem className={path === "/contact" ? "active" : ""}>
-                    <Link onClick={closeHeader} to="/contact">Contact</Link>
+                    <FaArrowAltCircleRight  size={20}  />  <Link onClick={closeHeader} to="/contact">Contact</Link>
                 </MenuItem>
                 {/*<MenuItem className={path === "/test" ? "active" : ""}>*/}
                 {/*    <Link onClick={closeHeader} to="/Test">Test</Link>*/}

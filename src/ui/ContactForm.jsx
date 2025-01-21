@@ -19,34 +19,41 @@ import log from "eslint-plugin-react/lib/util/log.js";
 
 
 const Form = styled.form`
-
+  
   color: #f6f6f6;
   width: 100%;
-  background-color: #0e0d0d;
-  padding: 50px 0 ;
+  //border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  
+  //background-color: #0e0d0d;
+  background-color: #001220;
+  padding: 100px 0 ;
 
 
   ${breakpoints.tabletPortrait`
     padding: 20px;
-    background-color: lightblue;
+        background-color: #001220;
   `} 
     
     /* Tablet Landscape styles */ 
   ${breakpoints.tabletLandscape`
     padding: 30px;
-    background-color: lightgreen;
+    // background-color: lightgreen;
+        background-color: #001220;
   `} 
     
     /* Desktop styles */ ${breakpoints.desktop`
     padding: 40px;
-    background-color: #0e0d0d;
+    background-color: #001220;
+    
   `}
 
 `
 
 const LeftContainer = styled.div`
 
-  background-color: #0e0d0d;
+  background-color: #001220;
   display: grid;
   align-items: center;
 
@@ -61,7 +68,7 @@ const FormContainer = styled.div`
 
   width: 70%;
   margin: 0 auto;
-  background-color: #0e0d0d;
+  background-color: #001220;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr;
@@ -71,7 +78,7 @@ const FormContainer = styled.div`
 const RightContainer = styled.div`
   align-self: center;
   position: relative;
-
+  background-color: #001220;
 
 `
 
@@ -130,6 +137,21 @@ const H1 = styled.h1`
   animation: ${colorEffectAnimation} 2s infinite linear;
 
 `
+const H2 = styled.h2`
+
+  //max-width: 40px;
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  z-index: 1;
+  
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background-clip: padding-box;
+  animation: ${colorEffectAnimation} 2s infinite linear;
+
+`
 
 
 const ContactForm = () => {
@@ -170,6 +192,7 @@ const ContactForm = () => {
     return (
 
         <Form onSubmit={handleSubmit(onSubmit, onError)}>
+            <H2>Get in Touch <GrContact />  </H2>
             <FormContainer>
                 <LeftContainer>
                     <FormRow  error={errors?.first_name}>
@@ -224,7 +247,7 @@ const ContactForm = () => {
 
                     <SVG id="visual" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg"
                          xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1">
-                        <rect x="0" y="0" width="960" height="540" fill="#0e0d0d"></rect>
+                        <rect x="0" y="0" width="960" height="540" fill="#001220"></rect>
                         <g transform="translate(486.07994517438544 277.84591347805264)">
                             <path
                                 d="M67.7 -121.5C92.1 -103.2 119.2 -93.9 137.9 -75.1C156.6 -56.3 166.8 -28.2 167.9 0.7C169.1 29.5 161.2 59 142.2 77.3C123.3 95.5 93.3 102.6 67.7 115.2C42.2 127.7 21.1 145.9 -3.4 151.7C-27.8 157.5 -55.7 151.1 -75 134.9C-94.3 118.8 -105.2 92.9 -122.9 68.8C-140.7 44.7 -165.3 22.3 -175.2 -5.7C-185.1 -33.7 -180.2 -67.5 -160.8 -88.7C-141.4 -109.9 -107.5 -118.6 -78.2 -134.1C-49 -149.5 -24.5 -171.8 -1.4 -169.3C21.7 -166.9 43.3 -139.7 67.7 -121.5"

@@ -136,16 +136,23 @@ const H3 = styled.h3`
 `
 
 const P = styled.p`
-
   margin-block-start: 8px;
   color: whitesmoke;
   opacity: 0.7;
-
 `
 
 const InnerRightWrapper = styled.div`
+    
+`
 
+const onClickProject=()=>{
 
+}
+
+const A=styled.a`
+
+    color: unset;
+    text-decoration: none;
 `
 
 const ProjectsSection = forwardRef(({techHandle, sahan}, ref) => {
@@ -173,7 +180,7 @@ const ProjectsSection = forwardRef(({techHandle, sahan}, ref) => {
                 <ButtonGroup>
                     <Button>About</Button>
                     <Button>Experience</Button>
-                    <Button>Projects</Button>
+                    <Button><A href="https://crave-crust-sahan.netlify.app/">Projects</A></Button>
                     <Button type={"special"} onClick={handleClick}>Tech Stack</Button>
                 </ButtonGroup>
             </LeftContainer>

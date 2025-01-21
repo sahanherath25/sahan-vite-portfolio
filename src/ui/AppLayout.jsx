@@ -10,29 +10,19 @@ const StyledAppLayout = styled.div`
   
   display: grid;
   height: 100vh;
-  //grid-template-columns: 1fr;
   grid-template-columns: 1fr; /* Single column layout */
   grid-template-rows: auto 1fr auto; /* Header, Main (flexible), Footer */
   
-  //grid-template-rows: auto 1fr;
-  //border: 1px solid darkred;
-  //margin: 1px;
+  
 `
 
 const Main=styled.main`
-  //background-color: navajowhite;
-  //padding: 4rem 4.8rem 6.4rem;
-  //overflow: scroll;
-  overflow: auto;
-  //border: 1px solid navy;
+
+  overflow-y: auto;
+
 `
 
 const Container = styled.div`
-  //max-width: 120rem;
-  //margin: 0 auto;
-  //display: flex;
-  //flex-direction: column;
-  //gap: 3.2rem;
   
 `
 
