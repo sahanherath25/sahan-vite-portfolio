@@ -9,6 +9,8 @@ import {useQuery} from "@tanstack/react-query";
 import getProjectData from "../features/projects/getProjectData.js";
 import {getNewsData} from "../features/projects/apiProjects.js";
 import {fetchTours} from "../features/user/useUsers.js";
+
+import{motion} from "framer-motion";
 import Intro from "../ui/Intro.jsx";
 import Button from "../ui/Button.jsx";
 import Wave from "../ui/Wave.jsx";
@@ -82,7 +84,11 @@ const Projects = () => {
 
     return (
 
-        <section>
+        <motion.section
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            exit={{opacity:0}}
+        >
 
             <StyledContainer className="header" data-aos={"fade-in"}>
 
@@ -140,7 +146,7 @@ const Projects = () => {
 
             <Grid/>
 
-        </section>
+        </motion.section>
     )
 }
 

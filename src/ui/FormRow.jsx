@@ -31,7 +31,7 @@ const FormRow = ({label,error,children}) => {
         <StyledFormRow>
             {label && <Label>{label}</Label>}
             {children}
-            {error && <Error> <MdError /> {error.message}</Error>}
+            {error && <Error> <MdError /> {error?.message}</Error>}
         </StyledFormRow>
 
     )

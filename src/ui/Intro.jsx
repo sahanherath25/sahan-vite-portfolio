@@ -5,7 +5,7 @@ import bgImage from "../assets/images/circle-scatter-haikei2.svg";
 import styled from "styled-components";
 import Button from "./Button.jsx";
 import UIButton from "./UIButton.jsx";
-
+import { motion } from "framer-motion";
 
 const StyledIntroContainer = styled.div`
 

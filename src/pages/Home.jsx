@@ -12,6 +12,8 @@ import ContactForm from "../ui/ContactForm.jsx";
 import WaveEnd from "../ui/WaveEnd.jsx";
 import Skills from "../features/skills/Skills.jsx";
 
+import{motion} from "framer-motion";
+
 
 
 
@@ -53,7 +55,12 @@ const Home = () => {
 
     return (
 
-        <div>
+        <motion.div
+
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            exit={{opacity:0}}
+        >
             <div  data-aos={"zoom-in-down"} style={{
                 backgroundImage:`url(${blobImage})`,
                 backgroundRepeat:"no-repeat",
@@ -69,7 +76,7 @@ const Home = () => {
             <WaveEnd/>
 
 
-        </div>
+        </motion.div>
 
 
     )

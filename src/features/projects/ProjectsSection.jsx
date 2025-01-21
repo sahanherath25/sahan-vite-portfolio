@@ -5,6 +5,8 @@ import Experience from "../../ui/Experience.jsx";
 import {SiPaloaltosoftware} from "react-icons/si";
 import {BsEmojiSmileUpsideDown} from "react-icons/bs";
 
+import{motion} from "framer-motion";
+
 
 const StyledContainer = styled.section`
 

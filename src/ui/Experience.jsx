@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const StyledContainer = styled.div`
 
+  //background-color: red;
   position: relative;
   margin-block-start: 40px;
   width: 100%;
@@ -11,6 +12,7 @@ const StyledContainer = styled.div`
   display: flex;
   //border: 1px solid #ccc;
   transition: all 0.3s ease;
+  background-color: #001220;
 
   &:last-child {
     margin-block-end: 20px;
@@ -23,14 +25,14 @@ const StyledContainer = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.2); /* Semi-transparent overlay color */
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
+    //background: rgba(0, 0, 0, 0.2); /* Semi-transparent overlay color */
+    //opacity: 0.6;
+    //transition: opacity 0.3s ease;
     z-index: 1;
   }
 
   &:hover::before {
-    opacity: 0.1;
+    //opacity: 0.1;
   }
 
   &:hover {
@@ -51,8 +53,7 @@ const StyledContainer = styled.div`
       color: #948c8c;
       font-size: 25px;
     }
-
-
+    
     flex-basis: 30%;
   }
 
@@ -90,11 +91,12 @@ const Experience = () => {
         const y = clientY - top;
         setBgStyle({
             background: `radial-gradient(circle at ${x}px ${y}px, rgba(0, 100, 0, 0.1), transparent 70%)`
+
         });
     };
 
     return (
-        <StyledContainer className={" experiences"} onMouseMove={handleMouseMove} style={bgStyle}>
+        <StyledContainer className={" experiences"} onMouseMove={handleMouseMove} style={bgStyle} onMouseLeave={()=>setBgStyle({})} >
             <div className="period">
                 <h4>2022-2024</h4>
             </div>

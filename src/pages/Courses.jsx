@@ -3,6 +3,9 @@ import initAOS from "../aos/aos.js";
 import {FaLaptopCode} from "react-icons/fa";
 import UnderDevelopment from "./UnderDevelopment.jsx";
 
+
+import{motion} from "framer-motion";
+
 const Courses=()=>{
 
     useEffect(()=>{
@@ -12,9 +15,13 @@ const Courses=()=>{
     },[])
 
     return(
-        <div>
+        <motion.div
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            exit={{opacity:0}}
+        >
             <UnderDevelopment/>
-        </div>
+        </motion.div>
     )
 }
 
