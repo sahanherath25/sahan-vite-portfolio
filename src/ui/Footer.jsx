@@ -39,11 +39,13 @@ const FooterWrapper = styled.footer`
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+  
 
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem 1rem;
+    position: sticky;
   }
 `;
 

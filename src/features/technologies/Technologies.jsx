@@ -8,6 +8,7 @@ import {SiExpress, SiMysql, SiStyledcomponents} from "react-icons/si";
 import {IoLogoJavascript} from "react-icons/io";
 import Technology from "./Technology.jsx";
 import {TbBrandReactNative} from "react-icons/tb";
+import {FcBiotech} from "react-icons/fc";
 
 
 const StyledContainer = styled.section`
@@ -40,6 +41,11 @@ const TechContainer = styled.div`
 
 const H2=styled.h2`
     
+    display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
     
     
 `
@@ -55,7 +61,7 @@ const Technologies = forwardRef( (props, ref)=> {
     return (
         <StyledContainer ref={ref} >
 
-            <H2> My  Tech Stack</H2>
+            <H2> <FcBiotech /> My  Tech Stack</H2>
             <TechContainer>
                 <Technology><FaReact/> React</Technology>
                 <Technology> <IoLogoJavascript/> JavaScript</Technology>

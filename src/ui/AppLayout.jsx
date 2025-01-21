@@ -10,17 +10,21 @@ const StyledAppLayout = styled.div`
   
   display: grid;
   height: 100vh;
-  grid-template-columns: 1fr;
+  //grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* Single column layout */
+  grid-template-rows: auto 1fr auto; /* Header, Main (flexible), Footer */
+  
   //grid-template-rows: auto 1fr;
-  border: 1px solid darkred;
+  //border: 1px solid darkred;
   //margin: 1px;
 `
 
 const Main=styled.main`
   //background-color: navajowhite;
   //padding: 4rem 4.8rem 6.4rem;
-  overflow: scroll;
-  border: 1px solid navy;
+  //overflow: scroll;
+  overflow: auto;
+  //border: 1px solid navy;
 `
 
 const Container = styled.div`
@@ -35,15 +39,13 @@ const Container = styled.div`
 const AppLayout = () => {
     return (
         <StyledAppLayout>
-
             <StyledHeader/>
             <Main>
                 <Container>
                     <Outlet/>
-                    <Footer/>
                 </Container>
+                <Footer/>
             </Main>
-
         </StyledAppLayout>
     )
 }
