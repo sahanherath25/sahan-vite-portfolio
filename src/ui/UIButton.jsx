@@ -2,7 +2,13 @@
 import styled, { css } from 'styled-components';
 
 // Button styles
-const StyledButton = styled.button`
+const StyledButton = styled.button.withConfig({
+    shouldForwardProp: (prop) =>
+        !['hoverBgColor', 'activeBgColor', 'padding', 'fontSize', 'borderRadius', 'variant', 'bgColor', 'textColor'].includes(prop),
+
+
+})`
+  
   display: inline-block;
   padding: ${(props) => props.padding || '10px 20px'};
   font-size: ${(props) => props.fontSize || '16px'};
