@@ -57,6 +57,20 @@ export const colorEffectAnimation = keyframes`
     background-color: transparent;
   }
 `;
+export const colorEffectAnimationForFormError = keyframes`
+  0% {
+    color: #872341;
+    background-color: transparent;
+  }
+  50% {
+    color: transparent;
+    background-color: transparent;
+  }
+  100% {
+    color: #872341;
+    background-color: transparent;
+  }
+`;
 
 export const fireworkAnimation  = keyframes`
   0% {

@@ -2,9 +2,9 @@ import styled from "styled-components";
 import {forwardRef, useEffect} from "react";
 import initAOS from "../../aos/aos.js";
 import AOS from "aos"
-import {FaCss3Alt, FaDocker, FaGit, FaGithub, FaJava, FaPython, FaReact, FaSass} from "react-icons/fa";
+import {FaAndroid, FaCss3Alt, FaDocker, FaGit, FaGithub, FaJava, FaPython, FaReact, FaSass} from "react-icons/fa";
 import {RiNodejsLine, RiSupabaseFill} from "react-icons/ri";
-import {SiExpress, SiMysql, SiStyledcomponents} from "react-icons/si";
+import {SiExpress, SiGithubactions, SiMysql, SiStyledcomponents} from "react-icons/si";
 import {IoLogoJavascript} from "react-icons/io";
 import Technology from "./Technology.jsx";
 import {TbBrandReactNative} from "react-icons/tb";
@@ -69,13 +69,15 @@ const Technologies = forwardRef( (props, ref)=> {
                 <Technology> <RiNodejsLine/> Node Js</Technology>
                 <Technology> <SiExpress/> Express</Technology>
                 <Technology> <FaJava/> Java</Technology>
+                <Technology> <FaAndroid /> Android </Technology>
                 <Technology> <FaPython/> Python</Technology>
                 <Technology> <SiStyledcomponents /> Styled Components</Technology>
                 <Technology> <FaSass /> SASS</Technology>
                 <Technology> <FaCss3Alt />CSS</Technology>
                 <Technology> <FaDocker /> Docker</Technology>
                 <Technology> <FaGit /> Git</Technology>
-                <Technology> <FaGithub />Github</Technology>
+                <Technology> <FaGithub /> Github</Technology>
+                <Technology> <SiGithubactions /> Github Actions</Technology>
                 <Technology> <TbBrandReactNative /> React Native</Technology>
                 <Technology> <RiSupabaseFill /> Supabase </Technology>
                 <Technology> <SiMysql /> MySQL</Technology>

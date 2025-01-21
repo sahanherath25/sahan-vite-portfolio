@@ -15,6 +15,7 @@ import {useMutation} from "@tanstack/react-query";
 import {createContactUser} from "../features/contact/apiContact.js";
 import {GrContact} from "react-icons/gr";
 import {BsSendArrowDown} from "react-icons/bs";
+import log from "eslint-plugin-react/lib/util/log.js";
 
 
 const Form = styled.form`
@@ -134,6 +135,9 @@ const H1 = styled.h1`
 const ContactForm = () => {
 
     const {register, handleSubmit, reset,getValues,formState} = useForm()
+    const {errors}=formState
+
+    console.log("Form Errors ",errors)
 
     const {isLoading, mutate} = useMutation({
         mutationFn: createContactUser,
@@ -157,18 +161,21 @@ const ContactForm = () => {
     }
 
     function onError(error) {
+
         console.log("ERROR REQUIRED ", error)
     }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
     return (
 
         <Form onSubmit={handleSubmit(onSubmit, onError)}>
             <FormContainer>
                 <LeftContainer>
-                    <FormRow >
+                    <FormRow  error={errors?.first_name}>
                         <Input placeholder={"First Name"} id={"firstname"}
                                {...register("first_name", {
-                                   required: "This Field is Required",
+                                   required: "First name  Field is Required",
                                    validate:(value)=>{
                                       // TODO Should return boolean
                                       return  isNaN(value) || "First Name must not be a number"
@@ -180,13 +187,23 @@ const ContactForm = () => {
                                )}
                         />
                     </FormRow>
-                    <FormRow>
+                    <FormRow error={errors?.last_name}>
                         <Input placeholder={"Last  Name"}
-                               id={"lastname"}  {...register("last_name", {required: "This Field is Required"})}/>
+                               id={"lastname"}  {...register("last_name", {required: "Last Name Field is Required"})}/>
                     </FormRow>
-                    <FormRow>
+                    <FormRow error={errors?.email}>
                         <Input placeholder={"Email "}
-                               id={"email"}  {...register("email", {required: "Email is Required"})}/>
+                               id={"email"}  {...register("email",
+                            {
+                                required: "Email is Required",
+                                validate:(email)=>{
+
+                                    if(!email){
+                                        return "Email Field CAnnot Empty"
+                                    }
+                                    return emailRegex.test(email) || "Invalid email address format.";
+                                }
+                            })}/>
                     </FormRow>
                     <Button type={"submit"} position={"center"}>
                         Share Your Feedback < BsSendArrowDown size={25} />

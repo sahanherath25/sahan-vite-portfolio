@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { RiMenuFill, RiCloseFill } from "react-icons/ri";
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
+import breakpoints from "../styles/breakpoints.jsx";
 
 // Styled components
 const HeaderContainer = styled.div`
@@ -38,13 +39,14 @@ const MenuList = styled.ul`
   opacity: ${(props) => (props.show ? 1 : 0)};
   visibility: ${(props) => (props.show ? "visible" : "hidden")};
   transition: all 0.3s;
+  
 
   ${(props) =>
-    props.isTabletLandscape &&
+    breakpoints.tabletLandscape &&
     css`
       border-top-left-radius: unset;
       border-bottom-left-radius: 50%;
-      height: 60%;
+      height: 100%;
       width: 50%;
       transition: all 0.5s;
     `}
