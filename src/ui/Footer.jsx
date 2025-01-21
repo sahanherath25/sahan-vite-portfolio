@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {FaFacebook, FaGithub, FaLinkedin, FaReact, FaTiktok, FaTwitter, FaYoutube} from "react-icons/fa";
 import {BiLogoNetlify} from "react-icons/bi";
 import {AiFillThunderbolt} from "react-icons/ai";
+import {SiGmail} from "react-icons/si";
 
 // Animation for hover effect
 const glow = keyframes`
@@ -117,6 +118,9 @@ const Footer = () => {
             </FooterLinks>
             <WrapperSection>
                 <FooterSocials>
+                    <a href="https://github.com/sahanherath25" target="_blank" rel="noopener noreferrer">
+                        <SiGmail />
+                    </a>
                     <a href="https://github.com/sahanherath25" target="_blank" rel="noopener noreferrer">
                         <FaGithub/>
                     </a>

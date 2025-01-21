@@ -13,6 +13,8 @@ import {
 import {useForm} from "react-hook-form";
 import {useMutation} from "@tanstack/react-query";
 import {createContactUser} from "../features/contact/apiContact.js";
+import {GrContact} from "react-icons/gr";
+import {BsSendArrowDown} from "react-icons/bs";
 
 
 const Form = styled.form`
@@ -106,19 +108,19 @@ const H1 = styled.h1`
   animation: ${glowingEffect};
 
 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0; /* Position it at the bottom of the "Contact" text */
-    left: 0;
-    right: 0;
-    height: 2px; /* Thickness of the line */
-    background-color: white;
-    width: 60%; /* Adjust this to control how much width the line occupies */
-    margin: 0 auto; /* Center the line */
-
-  }
+  //&::after {
+  //  content: "";
+  //  display: block;
+  //  position: absolute;
+  //  bottom: 0; /* Position it at the bottom of the "Contact" text */
+  //  left: 0;
+  //  right: 0;
+  //  height: 2px; /* Thickness of the line */
+  //  background-color: white;
+  //  width: 60%; /* Adjust this to control how much width the line occupies */
+  //  margin: 0 auto; /* Center the line */
+  //
+  //}
 
   padding: 10px 20px;
   border: 2px solid transparent;
@@ -163,11 +165,12 @@ const ContactForm = () => {
         <Form onSubmit={handleSubmit(onSubmit, onError)}>
             <FormContainer>
                 <LeftContainer>
-                    <FormRow>
+                    <FormRow >
                         <Input placeholder={"First Name"} id={"firstname"}
                                {...register("first_name", {
                                    required: "This Field is Required",
                                    validate:(value)=>{
+                                      // TODO Should return boolean
                                       return  isNaN(value) || "First Name must not be a number"
                                    },
                                    minLength: {
@@ -185,13 +188,13 @@ const ContactForm = () => {
                         <Input placeholder={"Email "}
                                id={"email"}  {...register("email", {required: "Email is Required"})}/>
                     </FormRow>
-                    <Button type={"submit"}>
-                        Share Your Feedback
+                    <Button type={"submit"} position={"center"}>
+                        Share Your Feedback < BsSendArrowDown size={25} />
                     </Button>
 
                 </LeftContainer>
                 <RightContainer>
-                    <H1>Contact <p>Me</p></H1>
+                    <H1>Contact <p>Me</p> </H1>
                     {/*<SVG id="visual" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg"*/}
                     {/*     xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1">*/}
                     {/*    <rect x="0" y="0" width="960" height="540" fill="#000000"></rect>*/}

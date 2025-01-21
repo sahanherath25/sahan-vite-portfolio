@@ -2,9 +2,11 @@ import React, {forwardRef, useState} from "react";
 import styled, {css} from "styled-components";
 import Experiences from "../../ui/Experiences.jsx";
 import Experience from "../../ui/Experience.jsx";
+import {SiPaloaltosoftware} from "react-icons/si";
+import {BsEmojiSmileUpsideDown} from "react-icons/bs";
 
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.section`
 
   background-color: #001220;
   display: grid;
@@ -13,6 +15,17 @@ const StyledContainer = styled.div`
   padding: 100px;
   color: whitesmoke;
   align-items: flex-start;
+  
+  & > div > p {
+    transition: opacity 0.5s ease-in-out; /* Apply transition to the p element */
+    opacity: 0.5; /* Set the initial opacity */
+  }
+  
+  &>div>p:hover{
+    opacity: 1;
+    cursor: cell;
+    
+  }
 
 
 `
@@ -149,12 +162,12 @@ const ProjectsSection = forwardRef(({techHandle, sahan}, ref) => {
 
 
     return (
-        <StyledContainer as={"section"} ref={ref}>
+        <StyledContainer as={"section"} ref={ref} id={"projects"}>
 
             <LeftContainer>
-                <H1>Sahan Herath </H1>
-                <H3>Software Engineer</H3>
-                <P>I Build pixel Perfect Engaging And Acessible digitial EXperiences</P>
+                <H1> Sahan Herath </H1>
+                <H3> <SiPaloaltosoftware /> Software Engineer <SiPaloaltosoftware />  </H3>
+                <P>I Build pixel Perfect Engaging And Acessible digitial Experiences</P>
 
 
                 <ButtonGroup>

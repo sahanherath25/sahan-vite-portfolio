@@ -70,7 +70,7 @@ const Intro = ({handleClick}) => {
             <StyledInnerWrapper className={"inner-wrapper"}>
                 <H1 as={"h1"}> I'm Sahan</H1>
                 <StyledIntroContent className="intro-content">
-                    <P>Frontend <br/>Developer </P>
+                    <P>Software Engineer </P>
                     {/*<UIButton  type={"submit"} onClick={getStart}>Get Start</UIButton>*/}
                     <UIButton hoverBgColor={"#872341"} type={"button"} bgColor={"#BE3144"} textColor={"#fff"} onClick={getStart} className={"primary-button btn-lg bold "}>Get
                         Started</UIButton>

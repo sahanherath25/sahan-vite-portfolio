@@ -25,10 +25,10 @@ const Main=styled.main`
 
 const Container = styled.div`
   //max-width: 120rem;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem;
+  //margin: 0 auto;
+  //display: flex;
+  //flex-direction: column;
+  //gap: 3.2rem;
   
 `
 
@@ -36,17 +36,14 @@ const AppLayout = () => {
     return (
         <StyledAppLayout>
 
-            {/*<Header/>*/}
-            {/*<h1>HEADER SECTION</h1>*/}
-            {/*<Hero/>*/}
-
             <StyledHeader/>
             <Main>
                 <Container>
                     <Outlet/>
+                    <Footer/>
                 </Container>
             </Main>
-            <Footer/>
+
         </StyledAppLayout>
     )
 }

@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import initAOS from "../aos/aos.js";
 import {FaLaptopCode} from "react-icons/fa";
+import UnderDevelopment from "./UnderDevelopment.jsx";
 
 const Courses=()=>{
 
@@ -12,7 +13,7 @@ const Courses=()=>{
 
     return(
         <div>
-            <h1 data-aos="fade-right"> Under Development</h1>
+            <UnderDevelopment/>
         </div>
     )
 }
