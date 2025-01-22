@@ -114,8 +114,9 @@ const Footer = () => {
 
         <FooterWrapper>
             <FooterLinks>
-                <Link href="#about">About</Link>
-                <Link href="#projects">Projects</Link>
+                <Link to={"/"}>Home</Link>
+                <Link to="#about">About</Link>
+                <Link to={"/projects"}>Projects</Link>
                 <Link href="#contact">Contact</Link>
             </FooterLinks>
             <WrapperSection>

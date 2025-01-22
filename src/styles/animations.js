@@ -57,6 +57,22 @@ export const colorEffectAnimation = keyframes`
     background-color: transparent;
   }
 `;
+export const colorEffectAnimationForHeading = keyframes`
+  0% {
+   color: #00FF9C; 
+    background-color: transparent;
+  }
+  50% {
+    color: transparent;
+    background-color: transparent;
+  }
+  100% {
+    color: #00FF9C;
+    background-color: transparent;
+  }
+`;
+
+
 export const colorEffectAnimationForFormError = keyframes`
   0% {
     color: #872341;

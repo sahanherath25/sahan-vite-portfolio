@@ -8,7 +8,7 @@ import {
     borderEffectAnimation,
     glowingEffect,
     colorEffectAnimation,
-    boxShadowEffectAnimation
+    boxShadowEffectAnimation, colorEffectAnimationForHeading
 } from "../styles/animations.js";
 import {useForm} from "react-hook-form";
 import {useMutation} from "@tanstack/react-query";
@@ -113,29 +113,13 @@ const H1 = styled.h1`
   text-align: center;
   color: white;
   z-index: 2;
-
   animation: ${glowingEffect};
-
-
-  //&::after {
-  //  content: "";
-  //  display: block;
-  //  position: absolute;
-  //  bottom: 0; /* Position it at the bottom of the "Contact" text */
-  //  left: 0;
-  //  right: 0;
-  //  height: 2px; /* Thickness of the line */
-  //  background-color: white;
-  //  width: 60%; /* Adjust this to control how much width the line occupies */
-  //  margin: 0 auto; /* Center the line */
-  //
-  //}
-
+  
   padding: 10px 20px;
   border: 2px solid transparent;
   border-radius: 5px;
   background-clip: padding-box;
-  animation: ${colorEffectAnimation} 2s infinite linear;
+  //animation: ${colorEffectAnimation} 2s infinite linear;
 
 `
 const H2 = styled.h2`
@@ -150,7 +134,7 @@ const H2 = styled.h2`
   border: 2px solid transparent;
   border-radius: 5px;
   background-clip: padding-box;
-  animation: ${colorEffectAnimation} 2s infinite linear;
+  animation: ${colorEffectAnimationForHeading} 2s infinite linear;
 
 `
 
@@ -193,7 +177,7 @@ const ContactForm = () => {
 
     return (
 
-        <Form onSubmit={handleSubmit(onSubmit, onError)}>
+        <Form onSubmit={handleSubmit(onSubmit, onError)} id={"contact"}>
             <H2>Get in Touch <GrContact />  </H2>
             <FormContainer>
                 <LeftContainer>

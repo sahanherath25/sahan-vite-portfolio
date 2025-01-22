@@ -11,6 +11,8 @@ import {TbBrandReactNative} from "react-icons/tb";
 import {FcBiotech} from "react-icons/fc";
 
 import { motion ,useInView,useAnimation} from "framer-motion";
+import {DiMongodb} from "react-icons/di";
+import {colorEffectAnimationForHeading} from "../../styles/animations.js";
 
 const StyledContainer = styled(motion.section)`
   //display: flex;
@@ -40,15 +42,25 @@ const TechContainer = styled.div`
 
 `
 
-const H2=styled.h2`
-    
-    display: flex;
+
+
+const H2 = styled.h2`
+
+  display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 5px;
-    
-    
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  z-index: 1;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background-clip: padding-box;
+  animation: ${colorEffectAnimationForHeading} 2s infinite linear;
+
 `
 
 const Technologies = forwardRef( (props, ref)=> {
@@ -90,7 +102,7 @@ const Technologies = forwardRef( (props, ref)=> {
             <TechContainer>
                 <Technology><FaReact/> React</Technology>
                 <Technology> <IoLogoJavascript/> JavaScript</Technology>
-                <Technology>MongoDB</Technology>
+                <Technology> <DiMongodb />MongoDB</Technology>
                 <Technology> <RiNodejsLine/> Node Js</Technology>
                 <Technology> <SiExpress/> Express</Technology>
                 <Technology> <FaJava/> Java</Technology>

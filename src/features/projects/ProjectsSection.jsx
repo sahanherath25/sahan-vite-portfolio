@@ -6,6 +6,7 @@ import {SiPaloaltosoftware} from "react-icons/si";
 import {BsEmojiSmileUpsideDown} from "react-icons/bs";
 
 import{motion} from "framer-motion";
+import {FaUserGraduate} from "react-icons/fa";
 
 
 const StyledContainer = styled(motion.section)`
@@ -176,7 +177,7 @@ const ProjectsSection = forwardRef(({techHandle, sahan}, ref) => {
         >
 
             <LeftContainer>
-                <H1> Sahan Herath </H1>
+                <H1 as={"h2"}> <FaUserGraduate /> Sahan Herath </H1>
                 <H3> <SiPaloaltosoftware /> Software Engineer <SiPaloaltosoftware />  </H3>
                 <P>I Build pixel Perfect Engaging And Acessible digitial Experiences</P>
 

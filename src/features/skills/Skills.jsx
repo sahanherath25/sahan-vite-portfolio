@@ -141,13 +141,10 @@ const P = styled.p`
 
 const Skills = ({dataAOS1, dataAOS2, dataAOS3}) => {
 
-    console.log("", dataAOS1)
-    console.log("", dataAOS2)
-    console.log("", dataAOS3)
     return (
         <StyledContainer>
             <StyledLeftContainer className={"left-container"} data-aos={dataAOS1 ? dataAOS1 : ""}>
-                <H1> <SiExpertsexchange/> Yes you're Right Im a JavaScript Expert</H1>
+                <H1> <SiExpertsexchange/> Im a JavaScript Expert</H1>
                 <hr/>
                 <P>I have strong knowledge in JavaScript and React, along with expertise in Node.js. I have
                     worked with various JavaScript libraries and tools, including:</P>
