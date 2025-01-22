@@ -10,8 +10,9 @@ import Technology from "./Technology.jsx";
 import {TbBrandReactNative} from "react-icons/tb";
 import {FcBiotech} from "react-icons/fc";
 
+import { motion ,useInView,useAnimation} from "framer-motion";
 
-const StyledContainer = styled.section`
+const StyledContainer = styled(motion.section)`
   //display: flex;
   //flex-wrap: wrap;
   //border: 1px solid darkred;
@@ -52,14 +53,38 @@ const H2=styled.h2`
 
 const Technologies = forwardRef( (props, ref)=> {
 
+    const isInView=useInView(ref,{once:true})
+    const mainControls=useAnimation()
+
+
+
     useEffect(() => {
 
-        initAOS()
-        AOS.refresh()
-    }, [])
+        // initAOS()
+        // AOS.refresh()
+
+        if(isInView){
+            mainControls.start("visible")
+        }
+
+
+    }, [isInView])
 
     return (
-        <StyledContainer ref={ref} >
+        <StyledContainer
+
+            ref={ref}
+            variants={{
+                hidden:{opacity:0,y:75},
+                visible:{opacity:1,y:0},
+            }}
+            initial={"hidden"}
+            animate={"visible"}
+            transition={{
+                duration:0.5,
+                delay:0.25
+            }}
+        >
 
             <H2> <FcBiotech /> My  Tech Stack</H2>
             <TechContainer>

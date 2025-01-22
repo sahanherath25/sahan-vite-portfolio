@@ -8,7 +8,7 @@ import {BsEmojiSmileUpsideDown} from "react-icons/bs";
 import{motion} from "framer-motion";
 
 
-const StyledContainer = styled.section`
+const StyledContainer = styled(motion.section)`
 
   background-color: #001220;
   display: grid;
@@ -171,7 +171,9 @@ const ProjectsSection = forwardRef(({techHandle, sahan}, ref) => {
 
 
     return (
-        <StyledContainer as={"section"} ref={ref} id={"projects"}>
+        <StyledContainer
+            as={"section"} ref={ref} id={"projects"}
+        >
 
             <LeftContainer>
                 <H1> Sahan Herath </H1>

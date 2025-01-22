@@ -1,13 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useRef} from "react";
 
 import bgImage from "../assets/images/circle-scatter-haikei2.svg";
 import styled from "styled-components";
 import Button from "./Button.jsx";
 import UIButton from "./UIButton.jsx";
-import { motion } from "framer-motion";
+import { motion ,useInView,useAnimation} from "framer-motion";
 
-const StyledIntroContainer = styled.div`
+const StyledIntroContainer = styled(motion.div)`
 
   background-image: url(${bgImage});
   height: 95vh;
@@ -57,6 +57,19 @@ const P = styled.p`
 
 const Intro = ({handleClick}) => {
 
+    const ref=useRef(null)
+    const isInView=useInView(ref,{once:true})
+
+    const mainControls=useAnimation()
+
+    useEffect(()=>{
+
+        console.log("LOG is in view")
+        if(isInView){
+            mainControls.start("visible")
+        }
+    },[isInView])
+
     const getStart = () => {
         console.log("SCROLL INTO Click")
         handleClick()
@@ -64,11 +77,25 @@ const Intro = ({handleClick}) => {
     }
 
     return (
-        <StyledIntroContainer className="introduction">
+        <StyledIntroContainer
+
+            ref={ref}
+            variants={{
+                hidden:{opacity:0,y:75},
+                visible:{opacity:1,y:0},
+            }}
+            initial={"hidden"}
+            animate={"visible"}
+            transition={{
+                duration:0.5,
+                delay:0.25
+            }}
+
+            className="introduction">
             <div className="overlay" >
             </div>
             <StyledInnerWrapper className={"inner-wrapper"}>
-                <H1 as={"h1"}> I'm Sahan</H1>
+                <H1 as={"h1"}> Hey  I'm Sahan.</H1>
                 <StyledIntroContent className="intro-content">
                     <P>Software Engineer </P>
                     {/*<UIButton  type={"submit"} onClick={getStart}>Get Start</UIButton>*/}
