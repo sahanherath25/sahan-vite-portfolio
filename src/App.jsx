@@ -37,6 +37,7 @@ function App() {
             <ReactQueryDevtools initialIsOpen={false}/>
             <GlobalStyles/>
                 <BrowserRouter>
+
                     <AnimatorRoutes/>
                 </BrowserRouter>
 

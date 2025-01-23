@@ -56,7 +56,6 @@ const Home = () => {
     return (
 
         <motion.div
-
             initial={{opacity:0}}
             animate={{opacity:1}}
             exit={{opacity:0}}
@@ -74,7 +73,6 @@ const Home = () => {
             <ContactForm/>
             <Skills />
             <WaveEnd/>
-
 
         </motion.div>
 
