@@ -23,11 +23,13 @@ import UIButton from "../ui/UIButton.jsx";
 import Skills from "../features/skills/Skills.jsx";
 
 const H1 = styled.h1`
-  color: wheat;
+  color: #00FF9C;
+  font-size: 45px;
 `
 
 
 const StyledContainer = styled.div`
+  padding-block-start: 100px;
   display: grid;
 `
 
