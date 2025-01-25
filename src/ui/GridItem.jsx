@@ -1,30 +1,42 @@
-import styled from "styled-components";
+import styled,{css} from "styled-components";
 import {projectAnimation} from "../styles/animations.js";
+import breakpoints from "../styles/breakpoints.jsx";
 
 const StyledGridItem = styled.div`
   
 
-  border: 1px solid aquamarine;
+  //border: 1px solid aquamarine;
   display: flex;
+  height: 300px;
   flex-direction: column;
   gap: 2px;
   position: relative;
-  animation: ${projectAnimation} 10s linear infinite;
+  margin: 2px;
+  //animation: ${projectAnimation} 10s linear infinite;
 
   &:hover {
     animation-play-state: paused;
   }
+
+
+  ${breakpoints.desktop( css`
+  
+    //background-color: red;
+    animation: ${projectAnimation} 10s linear infinite;
+  `)}
   
 
 `
 
 const StyledImageContainer = styled.div`
-  flex-grow: 1;
-`
+  //flex-grow: 1;
+
+height: 100%`
+
 
 const Image = styled.img`
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 `
 
@@ -72,7 +84,6 @@ const OverLay = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   
   
-  
 `
 
 
@@ -82,14 +93,14 @@ const handleHover = () => {
 
 
 
-function GridItem() {
+function GridItem({imgSrc}) {
 
     return (
         <StyledGridItem>
 
             <StyledImageContainer>
                 <Image
-                    src="https://images.unsplash.com/photo-1735597693189-9ba81b5bbc83?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src={imgSrc?imgSrc:"https://images.unsplash.com/photo-1735597693189-9ba81b5bbc83?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
                     alt=""/>
             </StyledImageContainer>
             <OverLay className="overlay"></OverLay>

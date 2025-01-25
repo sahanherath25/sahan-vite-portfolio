@@ -31,23 +31,11 @@ const Form = styled.form`
   background-color: #001220;
   padding: 100px 0 ;
 
-
-  ${breakpoints.tabletPortrait`
-    padding: 20px;
-        background-color: #001220;
-  `} 
-    
-    /* Tablet Landscape styles */ 
-  ${breakpoints.tabletLandscape`
-    padding: 30px;
-    // background-color: lightgreen;
-        background-color: #001220;
-  `} 
+  
     
     /* Desktop styles */ ${breakpoints.desktop`
     padding: 40px;
     background-color: #001220;
-    
   `}
 
 `
@@ -182,7 +170,9 @@ const ContactForm = () => {
             <FormContainer>
                 <LeftContainer>
                     <FormRow  error={errors?.first_name}>
-                        <Input placeholder={"First Name"} id={"firstname"}
+                        <Input
+                            type={"text"}
+                            placeholder={"First Name"} id={"firstname"}
                                {...register("first_name", {
                                    required: "First name  Field is Required",
                                    validate:(value)=>{
@@ -197,11 +187,15 @@ const ContactForm = () => {
                         />
                     </FormRow>
                     <FormRow error={errors?.last_name}>
-                        <Input placeholder={"Last  Name"}
+                        <Input
+                            type={"text"}
+                            placeholder={"Last  Name"}
                                id={"lastname"}  {...register("last_name", {required: "Last Name Field is Required"})}/>
                     </FormRow>
                     <FormRow error={errors?.email}>
-                        <Input placeholder={"Email "}
+                        <Input
+                            type={"text"}
+                            placeholder={"Email "}
                                id={"email"}  {...register("email",
                             {
                                 required: "Email is Required",

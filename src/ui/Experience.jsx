@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import styled from "styled-components";
+import {VscWorkspaceTrusted} from "react-icons/vsc";
 
 
 const StyledContainer = styled.div`
@@ -13,6 +14,7 @@ const StyledContainer = styled.div`
   //border: 1px solid #ccc;
   transition: all 0.3s ease;
   background-color: #001220;
+  gap:20px;
 
   &:last-child {
     margin-block-end: 20px;
@@ -25,9 +27,6 @@ const StyledContainer = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    //background: rgba(0, 0, 0, 0.2); /* Semi-transparent overlay color */
-    //opacity: 0.6;
-    //transition: opacity 0.3s ease;
     z-index: 1;
   }
 
@@ -41,20 +40,33 @@ const StyledContainer = styled.div`
       h3 {
         color: #00FFCA;
       }
+
+    }
+    .period {
+      h3 {
+        background-color: red;
+        color: #00FFCA;
+      }
     }
 
   }
 
   .period {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 15px;
+    
 
     h4 {
       color: #948c8c;
-      font-size: 25px;
+      font-size: 24px;
     }
     
     flex-basis: 30%;
+    
+    &:hover{
+
+    }
   }
 
   .content {
@@ -98,7 +110,9 @@ const Experience = () => {
     return (
         <StyledContainer className={" experiences"} onMouseMove={handleMouseMove} style={bgStyle} onMouseLeave={()=>setBgStyle({})} >
             <div className="period">
-                <h4>2022-2024</h4>
+                    <VscWorkspaceTrusted  size={30}/>
+                    <h4> Professional Experience</h4>
+
             </div>
             <div className="content">
                 <h3>Frontend Web Developer</h3>

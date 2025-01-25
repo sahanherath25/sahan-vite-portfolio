@@ -53,6 +53,10 @@ const GlobalStyles=createGlobalStyle`
     line-height: 1.5;
   }
   
+  a{
+    text-decoration: none;
+    tex
+  }
   
 `
 

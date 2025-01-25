@@ -1,19 +1,30 @@
-import styled from "styled-components";
+import styled,{css} from "styled-components";
 import GridItem from "./GridItem.jsx";
 import {useEffect} from "react";
 import initAOS from "../aos/aos.js";
 
 import AOS from "aos";
+import breakpoints from "../styles/breakpoints.jsx";
+
 
 const StyledGrid = styled.div`
 
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  border: 1px solid darkred;
+
+  //border: 1px solid darkred;
   width: 90%;
+  
   margin: 0 auto;
   grid-column-gap: 5px;
+  grid-row-gap: 10px;
+  
+  ${breakpoints.desktop( css`
+  
+    //background-color: red;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  `)}
+  
 
 `
 
@@ -27,12 +38,13 @@ const Grid = ({data}) => {
 
     useEffect(() => {
         initAOS()
-        AOS.refreshHard()
 
     }, []);
 
     return (
-        <StyledGrid data-aos={"zoom-in-up"}>
+        <StyledGrid >
+
+
 
             {/*{data? (*/}
             {/*    data.map(() => {*/}
@@ -42,12 +54,10 @@ const Grid = ({data}) => {
             {/*    })*/}
             {/*) : <h1 data-aos={"flip-left"}>No Data For the Grid</h1>}*/}
 
-            <GridItem/>
-            <GridItem/>
-            <GridItem/>
-            <GridItem/>
-            <GridItem/>
-            <GridItem/>
+            <GridItem imgSrc={"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects/Project1.jpeg"}/>
+            <GridItem imgSrc={"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects/project2.jpeg"}/>
+            <GridItem imgSrc={"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects/project3.jpeg"}/>
+            <GridItem imgSrc={"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects/project4.jpeg"}/>
 
         </StyledGrid>
     )
