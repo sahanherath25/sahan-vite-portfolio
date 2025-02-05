@@ -64,7 +64,12 @@ const StyledContentWrapper = styled.div`
 
 
   &:hover {
-    opacity: 0.5;
+    opacity: 0.7;
+    background-color: rgba(0, 0, 0, 0.1);
+    
+    p{
+      color: white;
+    }
   }
 
 `
@@ -91,24 +96,34 @@ const handleHover = () => {
 
 }
 
+const StyledLink=styled.a`
+    color:black;
+  background-color: #00FF9C;
+  padding: 10px;
+`
 
 
-function GridItem({imgSrc}) {
+function GridItem({imgSrc,heading="Project",href,description}) {
 
     return (
         <StyledGridItem>
 
             <StyledImageContainer>
                 <Image
+
                     src={imgSrc?imgSrc:"https://images.unsplash.com/photo-1735597693189-9ba81b5bbc83?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
                     alt=""/>
             </StyledImageContainer>
             <OverLay className="overlay"></OverLay>
             <StyledContentWrapper>
-                <H1 as={"h3"}>Test</H1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis consequuntur,
-                </p>
+
+                {href?
+                    <StyledLink target={"_blank"} href={href}><H1> View {heading}</H1> </StyledLink>
+                    :
+                    <H1 as={"h3"}>{heading}</H1>}
+
+                <p>{description?description:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis consequuntur,\n" +
+                    "     "}</p>
             </StyledContentWrapper>
 
 

@@ -7,6 +7,8 @@ import {BsEmojiSmileUpsideDown} from "react-icons/bs";
 
 import{motion} from "framer-motion";
 import {FaUserGraduate} from "react-icons/fa";
+import {useQuery, useQueryClient} from "@tanstack/react-query";
+import {fetchUserDataForHome} from "../../services/apiUser.js";
 
 
 const StyledContainer = styled(motion.section)`
@@ -160,15 +162,23 @@ const A=styled.a`
 
 const ProjectsSection = forwardRef(({techHandle, sahan}, ref) => {
 
-    const [isVisible, setIsVisible] = useState(false);
-
-    // console.log("PROJECSTS REF",sahan)
-    // console.log("PROJECSTS REF",techHandle)
-
     const handleClick = () => {
-
         techHandle()
     }
+
+    const queryClient=useQueryClient();
+
+    const {data:userData,isLoading}=useQuery({
+        queryKey:["users"],
+        queryFn:fetchUserDataForHome,
+        onSuccess:(data)=>{
+            console.log("DAT IS REFTECHED")
+            queryClient.invalidateQueries({queryKey:"users"})
+        }
+    })
+
+
+    console.log("MY USER DATA IS ",userData)
 
 
     return (
@@ -191,29 +201,16 @@ const ProjectsSection = forwardRef(({techHandle, sahan}, ref) => {
             </LeftContainer>
             <RightContainer>
 
-                <P>
-                    Enthusiastic software engineer with hands-on experience in front-end development, specializing in
-                    the creation of web and mobile applications. With a solid foundation in software engineering
-                    principles and a passion for user-friendly design, I am eager to leverage my skills to help
-                    organizations achieve their goals. As a recent graduate, I am actively seeking a role in Software
-                    Engineering to further develop my expertise and make a meaningful impact.
 
-                </P>
 
-                <P>
-                    My areas of expertise include:
-                    HTML, CSS, JavaScript, React, React Native , Java, Python responsive design, user experience
-                    (UX)
-                    optimization, modern frameworks (React,), Docker, AWS, web accessibility, team collaboration,
-                    problem-solving, and continuous learning.
-                </P>
+                {userData?<>
+                    {userData?.bio_description_p1?<P>{userData.bio_description_p1}</P>:null}
 
-                <P>
-                    I am always eager to take on new challenges and inspire my peers to excel. Guiding fellow developers
-                    to push their boundaries and unleash their creativity is what truly motivates me. Let's connect and
-                    explore the innovative solutions we can build together!
-                </P>
+                    {userData?.bio_description_p2?<P>{userData.bio_description_p2}</P>:null}
 
+                    {userData?.bio_description_p3?<P>{userData.bio_description_p3}</P>:null}
+
+                </>:null}
 
                 <Experiences>
                     <Experience/>

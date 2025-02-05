@@ -10,6 +10,7 @@ const StyledAppLayout = styled.div`
   
   display: grid;
   height: 100vh;
+
   grid-template-columns: 1fr; /* Single column layout */
   grid-template-rows: auto 1fr auto; /* Header, Main (flexible), Footer */
   
@@ -17,9 +18,11 @@ const StyledAppLayout = styled.div`
 `
 
 const Main=styled.main`
-
   overflow-y: auto;
-
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr ;
 `
 
 const Container = styled.div`

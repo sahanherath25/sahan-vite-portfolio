@@ -22,6 +22,9 @@ import 'aos/dist/aos.css';
 import UIButton from "../ui/UIButton.jsx";
 import Skills from "../features/skills/Skills.jsx";
 import breakpoints from "../styles/breakpoints.jsx";
+import {SiBmcsoftware} from "react-icons/si";
+import {fetchUserData} from "../services/apiUser.js";
+import Spinner from "../ui/Spinner.jsx";
 
 const H1 = styled.h1`
   color: #00FF9C;
@@ -33,7 +36,7 @@ const StyledContainer = styled(motion.section)`
   padding-block-start: 100px;
   display: grid;
   padding-block-end: 100px;
-  
+
 
 `
 
@@ -68,7 +71,7 @@ const LeftContainer = styled.div`
   box-shadow: 20px 20px 60px #d9d9d9,
     -20px -20px 60px #ffffff;
 
-  
+
   ${breakpoints.desktop(css`
     align-items: flex-start;
     //border: 1px solid sandybrown;
@@ -116,17 +119,29 @@ const IntroContainer = styled(Row)`
 
 
 const Projects = () => {
-    const {data, isLoading} = useQuery({
-        queryKey: ["projects"],
-        queryFn: getProjectData
-    })
 
-    const {data: usersData, isLoading: loading} = useQuery({
+    // const {data, isLoading} = useQuery({
+    //     queryKey: ["projects"],
+    //     queryFn: getProjectData
+    // })
+
+    // const {data: usersData, isLoading: loading} = useQuery({
+    //     queryKey: ["users"],
+    //     queryFn: fetchTours,
+    //     select: (data) => {
+    //         return data.map((tour) => {
+    //             return {tour: tour.name, difficulty: tour.difficulty}
+    //         })
+    //     }
+    // })
+
+    const {data, error, isLoading} = useQuery({
         queryKey: ["users"],
-        queryFn: fetchTours,
+        queryFn: fetchUserData,
         select: (data) => {
-            return data.map((tour) => {
-                return {tour: tour.name, difficulty: tour.difficulty}
+            console.log("DATA ", data)
+            return data.map((item) => {
+                return {title: item.title, techStack: item.tech_stack}
             })
         }
     })
@@ -134,7 +149,12 @@ const Projects = () => {
     useEffect(() => {
         initAOS()
 
-    }, [])
+        console.log("USER DATA RECEIVED ", data)
+
+    }, [data])
+
+
+    if (isLoading) return <Spinner/>
 
 
     return (
@@ -147,9 +167,9 @@ const Projects = () => {
             exit={{opacity: 0}}
             className="header" data-aos={"fade-in"}>
 
-            <IntroContainer >
+            <IntroContainer>
 
-                <H1>React and JavaScript Developer</H1>
+                <H1> <SiBmcsoftware/> React and JavaScript Developer <SiBmcsoftware/> </H1>
 
                 <p>
                     Welcome to my Projects Showcase! Here, you will find a collection of my most notable projects,
@@ -164,8 +184,10 @@ const Projects = () => {
             <ProjectContainer type={"horizontal"} width={900}>
                 <LeftContainer className="col-md-6 n-box-2 p-3 left-container py-5">
                     <h1 className={"font bold"}>Projects</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-                        animi consectetur, consequatur dignissimos magni minus porro quisquam quos ut voluptate.
+                    <p>In this section, you will find a curated selection of my projects that showcase my skills and
+                        passion for software development. Each project reflects my journey as I strive to create
+                        impactful solutions while continuously expanding my expertise in both front-end and full stack
+                        development.
                     </p>
 
                     <UIButton>Get Started</UIButton>
@@ -193,6 +215,8 @@ const Projects = () => {
             </ProjectContainer>
 
             <Grid/>
+
+
 
 
         </StyledContainer>

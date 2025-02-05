@@ -39,6 +39,7 @@ const FooterWrapper = styled.footer`
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+  grid-row:-1/3 ;
   
 
   @media (min-width: 768px) {

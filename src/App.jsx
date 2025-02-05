@@ -13,7 +13,12 @@ import initAOS from "./aos/aos.js";
 import "./styles/mixins/_mixins.scss"
 import Test from "./pages/Test.jsx";
 import AOSConfig from "./aos/aos.js";
+
+import AnimatedCursor from "react-animated-cursor";
+import React from "react";
 import AnimatorRoutes from "./pages/AnimatorRoutes.jsx";
+import WaterWaveComponent from "./VisualEffects/WaterWave.jsx";
+import WaterWaveWrapper from "./VisualEffects/WaterWave.jsx";
 
 
 const queryClient = new QueryClient({
@@ -33,14 +38,36 @@ function App() {
 
 
     return (
-        <QueryClientProvider client={queryClient}>
+             <QueryClientProvider client={queryClient}>
             <ReactQueryDevtools initialIsOpen={false}/>
             <GlobalStyles/>
+            <AnimatedCursor
+                innerSize={18}
+                outerSize={18}
+                color='193, 11, 111'
+                trailingSpeed={8}
+                outerColor="0, 0, 0"
+                outerAlpha={0.2}
+                innerScale={1.5}
+                outerScale={4}
+                clickables={[
+                    'a',
+                    'input[type="text"]',
+                    'input[type="email"]',
+                    'input[type="number"]',
+                    'input[type="submit"]',
+                    'input[type="image"]',
+                    'label[for]',
+                    'select',
+                    'textarea',
+                    'button',
+                    '.link'
+                ]}
+            />
             <BrowserRouter>
-                <AnimatorRoutes/>
+                    <AnimatorRoutes/>
             </BrowserRouter>
         </QueryClientProvider>
-
     )
 }
 

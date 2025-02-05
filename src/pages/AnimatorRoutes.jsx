@@ -7,14 +7,13 @@ import Courses from "./Courses.jsx";
 import Projects from "./Projects.jsx";
 
 import{AnimatePresence} from "framer-motion";
+import AdminPage from "./AdminPage.jsx";
 
 const ScrollToTop = () => {
     const { pathname } = useLocation();
-
     useEffect(() => {
         window.scrollTo(0, 0); // Scroll to the top of the page whenever the route changes
     }, [pathname]);
-
     return null; // This component doesn't render anything
 };
 
@@ -32,6 +31,7 @@ const AnimatorRoutes=()=>{
                     <Route path={"contact"} element={<Contact/>}/>
                     <Route path={"courses"} element={<Courses/>}/>
                     <Route path={"projects"} element={<Projects/>}/>
+                    <Route path={"admin"} element={<AdminPage/>}/>
                 </Route>
             </Routes>
         </AnimatePresence>

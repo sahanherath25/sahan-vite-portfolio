@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from "react";
 import Hero from "../ui/Hero.jsx";
-import {getUserData} from "../services/apiUser.js";
+// import {getUserData} from "../services/apiUser.js";
 import {useQuery} from "@tanstack/react-query";
 import Intro from "../ui/Intro.jsx";
 import blobImage from "../assets/images/blob-home.svg"
@@ -13,17 +13,19 @@ import WaveEnd from "../ui/WaveEnd.jsx";
 import Skills from "../features/skills/Skills.jsx";
 
 import{motion} from "framer-motion";
+import WaterWave from "../VisualEffects/WaterWave.jsx";
+import WaterWaveWrapper from "../VisualEffects/WaterWave.jsx";
 
 
 
 
 const Home = () => {
 
-    const {isLoading, data: cabins, error} = useQuery({
-        queryKey: ["users"],
-        //TODO actual function to fetch data
-        queryFn: getUserData,
-    })
+    // const {isLoading, data: cabins, error} = useQuery({
+    //     queryKey: ["users"],
+    //     //TODO actual function to fetch data
+    //     queryFn: getUserData,
+    // })
 
 
     const projectSectionRef = useRef(null);
@@ -54,27 +56,26 @@ const Home = () => {
     }, [])
 
     return (
+               <motion.div
+                initial={{opacity:0}}
+                animate={{opacity:1}}
+                exit={{opacity:0}}
+            >
+                <div  data-aos={"zoom-in-down"} style={{
+                    backgroundImage:`url(${blobImage})`,
+                    backgroundRepeat:"no-repeat",
+                    backgroundSize:"cover"
+                }}>
+                    <Intro  handleClick={handleScrollToProjects} />
+                </div>
 
-        <motion.div
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-            exit={{opacity:0}}
-        >
-            <div  data-aos={"zoom-in-down"} style={{
-                backgroundImage:`url(${blobImage})`,
-                backgroundRepeat:"no-repeat",
-                backgroundSize:"cover"
-            }}>
-                <Intro  handleClick={handleScrollToProjects} />
-        </div>
+                <ProjectsSection ref={projectSectionRef} sahan={true} techHandle={handleScrollToTechStack}/>
+                <Technologies  ref={TechnologiesRef}/>
+                <ContactForm/>
+                <Skills />
+                <WaveEnd/>
 
-            <ProjectsSection ref={projectSectionRef} sahan={true} techHandle={handleScrollToTechStack}/>
-            <Technologies  ref={TechnologiesRef}/>
-            <ContactForm/>
-            <Skills />
-            <WaveEnd/>
-
-        </motion.div>
+            </motion.div>
 
 
     )
