@@ -19,7 +19,7 @@ const StyledAppLayout = styled.div`
 
 const Main=styled.main`
   overflow-y: auto;
-  border: 1px solid red;
+  //border: 1px solid red;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr ;
