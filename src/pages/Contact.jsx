@@ -11,7 +11,7 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  border: 2px solid red;
+  //border: 2px solid red;
   //height: 700px;
   margin: 0 auto;
   overflow: hidden;
