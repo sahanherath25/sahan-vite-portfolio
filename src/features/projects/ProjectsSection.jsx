@@ -172,13 +172,11 @@ const ProjectsSection = forwardRef(({techHandle, sahan}, ref) => {
         queryKey:["users"],
         queryFn:fetchUserDataForHome,
         onSuccess:(data)=>{
-            console.log("DAT IS REFTECHED")
+            console.log("DAT IS REFTECHED",data)
             queryClient.invalidateQueries({queryKey:"users"})
         }
     })
 
-
-    console.log("MY USER DATA IS ",userData)
 
 
     return (
