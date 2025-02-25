@@ -28,9 +28,10 @@ const GlobalStyles=createGlobalStyle`
     font-size: 1.6rem;
   }
 
+
   /* Reset line-height for structural elements */
   div, section, article, aside, header, footer {
-    line-height: normal;
+    line-height: unset;
   }
   
   div{
@@ -55,7 +56,6 @@ const GlobalStyles=createGlobalStyle`
   
   a{
     text-decoration: none;
-    tex
   }
   
 `

@@ -3,13 +3,14 @@ import {Navigate, Route, Routes, useLocation} from "react-router-dom";
 import {AnimatePresence} from "framer-motion";
 import Loader from "../ui/Loader.jsx";
 import Spinner from "../ui/Spinner.jsx";
-
+import Education from "./Education";
 
 // import AppLayout from "../ui/AppLayout.jsx";
 // import Home from "./Home.jsx";
 // import Contact from "./Contact.jsx";
 // import Courses from "./Courses.jsx";
 // import Projects from "./Projects.jsx";
+// import AdminPage from "./AdminPage.jsx";
 
 //TODO Code Splitting
 
@@ -19,6 +20,7 @@ const Courses = lazy(() => import("../pages/Courses.jsx"))
 const AdminPage = lazy(() => import("../pages/AdminPage.jsx"))
 const Projects = lazy(() => import("../pages/Projects.jsx"))
 const AppLayout = lazy(() => import("../ui/AppLayout.jsx"))
+const EducationPage = lazy(() => import("../pages/Education.jsx"))
 
 
 const ScrollToTop = () => {
@@ -33,7 +35,10 @@ const AnimatorRoutes = () => {
 
     const location = useLocation()
 
+
+
     return (
+
         <AnimatePresence>
             <ScrollToTop/>
             <Suspense fallback={<Spinner/>}>
@@ -45,6 +50,7 @@ const AnimatorRoutes = () => {
                         <Route path={"courses"} element={<Courses/>}/>
                         <Route path={"projects"} element={<Projects/>}/>
                         <Route path={"admin"} element={<AdminPage/>}/>
+                        <Route path={"education"} element={<EducationPage/>}/>
                     </Route>
                 </Routes>
             </Suspense>

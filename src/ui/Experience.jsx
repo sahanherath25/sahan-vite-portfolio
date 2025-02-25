@@ -1,20 +1,27 @@
 import React, {useState} from "react";
-import styled from "styled-components";
+import {styled,css} from "styled-components";
 import {VscWorkspaceTrusted} from "react-icons/vsc";
+import breakpoints from "../styles/breakpoints.jsx";
+// import {getMonthRange} from "../utils/dateConvertions.js";
+
 
 
 const StyledContainer = styled.div`
-
-  //background-color: red;
+  
   position: relative;
   margin-block-start: 40px;
   width: 100%;
   color: white;
   display: flex;
-  //border: 1px solid #ccc;
+  flex-direction: column;
   transition: all 0.3s ease;
   background-color: #001220;
   gap:20px;
+
+  ${breakpoints.desktop(css`
+    display: flex;
+    flex-direction: row;
+  `)}
 
   &:last-child {
     margin-block-end: 20px;
@@ -89,9 +96,11 @@ const StyledContainer = styled.div`
 `
 
 
-const Experience = () => {
+const Experience = ({data}) => {
 
     const [bgStyle, setBgStyle] = useState({});
+
+    console.log("MY DATA ",data)
 
     const handleMouseMove = (e) => {
 
@@ -107,6 +116,17 @@ const Experience = () => {
         });
     };
 
+    if(!data){
+        return
+    }
+    const {achievement_1,position,start_date,end_date}=data;
+
+
+    // const period=getMonthRange(start_date,end_date);
+
+    // console.log("PERIOS ",period)
+
+
     return (
         <StyledContainer className={" experiences"} onMouseMove={handleMouseMove} style={bgStyle} onMouseLeave={()=>setBgStyle({})} >
             <div className="period">
@@ -115,14 +135,8 @@ const Experience = () => {
 
             </div>
             <div className="content">
-                <h3>Frontend Web Developer</h3>
-                <p>
-                    As a Software Engineer with over year and a half of expertise in web development, I have a strong
-                    track record of designing and building scalable web applications from the ground up. My journey into
-                    technology began with a deep curiosity about how software can solve real-world challenges, driving
-                    me to excel in both front-end and back-end development.
-
-                </p>
+                <h3>{position}</h3>
+                <p>{achievement_1?achievement_1:null}</p>
             </div>
         </StyledContainer>
     )

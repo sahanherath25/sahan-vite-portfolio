@@ -26,12 +26,12 @@ import { css } from "styled-components";
 
 const sizes = {
     tablet: '768px',
-    desktop: '992px',
+    desktop: '1200px',
 };
 
 export const breakpoints = {
     tablet: (styles) => css`
-    @media (min-width: ${sizes.tablet}) and (max-width: ${parseInt(sizes.desktop) - 1}px) {
+    @media (min-width: ${sizes.tablet}) and (max-width: ${1199}px) {
       ${styles}
     }
   `,

@@ -25,9 +25,10 @@ import breakpoints from "../styles/breakpoints.jsx";
 import {SiBmcsoftware} from "react-icons/si";
 import {fetchUserData} from "../services/apiUser.js";
 import Spinner from "../ui/Spinner.jsx";
+import {fetchProjectOverView} from "../services/apiProjects.js";
 
 const H1 = styled.h1`
-  color: #00FF9C;
+  color: #09122C;
   font-size: 45px;
 `
 
@@ -135,21 +136,32 @@ const Projects = () => {
     //     }
     // })
 
+    // const {data, error, isLoading} = useQuery({
+    //     queryKey: ["users"],
+    //     queryFn: fetchUserData,
+    //     select: (data) => {
+    //         console.log("DATA ", data)
+    //         return data.map((item) => {
+    //             return {title: item.title, techStack: item.tech_stack}
+    //         })
+    //     },
+    //     onSuccess:()=>{
+    //         console.log("HELLO SAHAN")
+    //     }
+    // })
+
     const {data, error, isLoading} = useQuery({
-        queryKey: ["users"],
-        queryFn: fetchUserData,
-        select: (data) => {
-            console.log("DATA ", data)
-            return data.map((item) => {
-                return {title: item.title, techStack: item.tech_stack}
-            })
-        }
+        queryKey: ["projectOverview"],
+        queryFn: fetchProjectOverView,
+
+
     })
+
 
     useEffect(() => {
         initAOS()
 
-        console.log("USER DATA RECEIVED ", data)
+        // console.log("Project  DATA RECEIVED ", data)
 
     }, [data])
 
@@ -168,29 +180,20 @@ const Projects = () => {
             className="header" data-aos={"fade-in"}>
 
             <IntroContainer>
-
-                <H1> <SiBmcsoftware/> React and JavaScript Developer <SiBmcsoftware/> </H1>
-
-                <p>
-                    Welcome to my Projects Showcase! Here, you will find a collection of my most notable projects,
-                    developed with cutting-edge technologies like Vite and React. Each project reflects my
-                    commitment to
-                    building functional, efficient, and user-friendly applications. Click on the project titles to
-                    explore detailed descriptions and insights into my development process.
-                </p>
-
+                {data.headline?  <H1> <SiBmcsoftware/>{data.headline}<SiBmcsoftware/> </H1>:null}
+                {data.project_intro?  <p className={""}>{data.project_intro}</p> :null}
             </IntroContainer>
 
             <ProjectContainer type={"horizontal"} width={900}>
                 <LeftContainer className="col-md-6 n-box-2 p-3 left-container py-5">
-                    <h1 className={"font bold"}>Projects</h1>
-                    <p>In this section, you will find a curated selection of my projects that showcase my skills and
-                        passion for software development. Each project reflects my journey as I strive to create
-                        impactful solutions while continuously expanding my expertise in both front-end and full stack
-                        development.
-                    </p>
-
-                    <UIButton>Get Started</UIButton>
+                    {data?
+                        <>
+                            {data?.title ? (<h1 className={"font bold"}>{data.title}</h1> ):null}
+                            { data?.sub_title ? (<p>{data.sub_title}</p>) :null}
+                        </>
+                        :null
+                    }
+                    <UIButton bgColor={"#09122C"}>Get Started</UIButton>
                 </LeftContainer>
                 <RightContainer className="right container ">
                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Hero from "../ui/Hero.jsx";
 // import {getUserData} from "../services/apiUser.js";
 import {useQuery} from "@tanstack/react-query";
@@ -15,17 +15,25 @@ import Skills from "../features/skills/Skills.jsx";
 import{motion} from "framer-motion";
 import WaterWave from "../VisualEffects/WaterWave.jsx";
 import WaterWaveWrapper from "../VisualEffects/WaterWave.jsx";
+import {getNewsData, myApiTours} from "../services/apiUser.js";
 
 
 
 
 const Home = () => {
 
-    // const {isLoading, data: cabins, error} = useQuery({
-    //     queryKey: ["users"],
-    //     //TODO actual function to fetch data
-    //     queryFn: getUserData,
-    // })
+    const {isLoading, data: cabins, error} = useQuery({
+        queryKey: ["users"],
+        //TODO actual function to fetch data
+        queryFn: myApiTours,
+        select:(data)=>{
+            return data.map((tour)=>{
+                return tour.name
+            })
+        }
+    })
+
+    console.log("SAHAN DATA ",cabins)
 
 
     const projectSectionRef = useRef(null);
@@ -64,11 +72,10 @@ const Home = () => {
                 <div  data-aos={"zoom-in-down"} style={{
                     backgroundImage:`url(${blobImage})`,
                     backgroundRepeat:"no-repeat",
-                    backgroundSize:"cover"
+                    backgroundSize:"cover",
                 }}>
                     <Intro  handleClick={handleScrollToProjects} />
                 </div>
-
                 <ProjectsSection ref={projectSectionRef} sahan={true} techHandle={handleScrollToTechStack}/>
                 <Technologies  ref={TechnologiesRef}/>
                 <ContactForm/>

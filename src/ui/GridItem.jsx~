@@ -19,9 +19,11 @@ const StyledGridItem = styled.div`
   }
 
 
-  // ${breakpoints.desktop( css`
-  //   animation: ${projectAnimation} 10s linear infinite;
-  // `)}
+  ${breakpoints.desktop( css`
+  
+    //background-color: red;
+    animation: ${projectAnimation} 10s linear infinite;
+  `)}
   
 
 `

@@ -9,22 +9,32 @@ import {IoLogoJavascript} from "react-icons/io";
 import Technology from "./Technology.jsx";
 import {TbBrandReactNative} from "react-icons/tb";
 import {FcBiotech} from "react-icons/fc";
-
+import {css} from "styled-components";
 import { motion ,useInView,useAnimation} from "framer-motion";
 import {DiMongodb} from "react-icons/di";
 import {colorEffectAnimationForHeading} from "../../styles/animations.js";
+import breakpoints from "../../styles/breakpoints.jsx";
 
 const StyledContainer = styled(motion.section)`
   //display: flex;
   //flex-wrap: wrap;
   //border: 1px solid darkred;
+ 
   display: grid;
   justify-content: center;
   width: 100%;
   text-align: center;
-  padding: 50px 100px;
   color: whitesmoke;
   background-color: #001220;
+  padding-block-end: 200px;
+  padding-block-start: 100px;
+  ${breakpoints.desktop(css`
+    display: grid;
+    justify-content: center;
+    padding: 50px 100px;
+  `)}
+  
+  
 
 `
 
@@ -59,7 +69,7 @@ const H2 = styled.h2`
   border: 2px solid transparent;
   border-radius: 5px;
   background-clip: padding-box;
-  animation: ${colorEffectAnimationForHeading} 2s infinite linear;
+  //animation: ${colorEffectAnimationForHeading} 2s infinite linear;
 
 `
 
@@ -97,7 +107,6 @@ const Technologies = forwardRef( (props, ref)=> {
                 delay:0.25
             }}
         >
-
             <H2> <FcBiotech /> My  Tech Stack</H2>
             <TechContainer>
                 <Technology><FaReact/> React</Technology>

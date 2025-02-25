@@ -110,6 +110,9 @@ const Header = () => {
                 <MenuItem className={path === "/geoLocation" ? "active" : ""}>
                     <Link to="/geoLocation">Location</Link>
                 </MenuItem>
+                <MenuItem className={path === "/education" ? "active" : ""}>
+                    <Link to="/education">Education</Link>
+                </MenuItem>
             </MenuList>
         </HeaderContainer>
     );

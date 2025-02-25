@@ -132,14 +132,13 @@ const ContactForm = () => {
     const {register, handleSubmit, reset,getValues,formState} = useForm()
     const {errors}=formState
 
-    console.log("Form Errors ",errors)
-    console.log("Form State ",formState)
+    // console.log("Form Errors ",errors)
+    // console.log("Form State ",formState)
 
     const {isLoading, mutate} = useMutation({
         mutationFn: createContactUser,
         onSuccess: () => {
-
-            console.log("Sucess Form Craete")
+            // console.log("Sucess Form Craete")
             reset()
         }
     })
@@ -152,8 +151,7 @@ const ContactForm = () => {
         }
 
         //TODO Form Is Working and Saved in Supabase
-
-        // mutate(data )
+        mutate(data )
     }
 
     function onError(error) {

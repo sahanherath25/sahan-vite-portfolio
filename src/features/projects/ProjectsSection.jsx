@@ -9,17 +9,23 @@ import{motion} from "framer-motion";
 import {FaUserGraduate} from "react-icons/fa";
 import {useQuery, useQueryClient} from "@tanstack/react-query";
 import {fetchUserDataForHome} from "../../services/apiUser.js";
+import breakpoints from "../../styles/breakpoints.jsx";
 
 
 const StyledContainer = styled(motion.section)`
 
   background-color: #001220;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   width: 100%;
-  padding: 100px;
+  padding: 20px;
   color: whitesmoke;
   align-items: flex-start;
+
+  ${breakpoints.desktop(css`
+    grid-template-columns: 1fr 1fr;
+    padding: 100px;
+  `)}
   
   & > div > p {
     transition: opacity 0.5s ease-in-out; /* Apply transition to the p element */
@@ -129,6 +135,12 @@ const RightContainer = styled.div`
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
+  
+  ${breakpoints.desktop(css`
+  
+    
+    
+  `)}
 `
 
 const H1 = styled.h1`
@@ -172,7 +184,6 @@ const ProjectsSection = forwardRef(({techHandle, sahan}, ref) => {
         queryKey:["users"],
         queryFn:fetchUserDataForHome,
         onSuccess:(data)=>{
-            console.log("DAT IS REFTECHED",data)
             queryClient.invalidateQueries({queryKey:"users"})
         }
     })
@@ -189,7 +200,6 @@ const ProjectsSection = forwardRef(({techHandle, sahan}, ref) => {
                 <H3> <SiPaloaltosoftware /> Software Engineer <SiPaloaltosoftware />  </H3>
                 <P>I Build pixel Perfect Engaging And Acessible digitial Experiences</P>
 
-
                 <ButtonGroup>
                     <Button>About</Button>
                     <Button>Experience</Button>
@@ -197,9 +207,8 @@ const ProjectsSection = forwardRef(({techHandle, sahan}, ref) => {
                     <Button type={"special"} onClick={handleClick}>Tech Stack</Button>
                 </ButtonGroup>
             </LeftContainer>
+
             <RightContainer>
-
-
 
                 {userData?<>
                     {userData?.bio_description_p1?<P>{userData.bio_description_p1}</P>:null}
@@ -210,10 +219,7 @@ const ProjectsSection = forwardRef(({techHandle, sahan}, ref) => {
 
                 </>:null}
 
-                <Experiences>
-                    <Experience/>
-                </Experiences>
-
+                <Experiences/>
 
             </RightContainer>
 
