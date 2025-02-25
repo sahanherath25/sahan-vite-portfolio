@@ -46,11 +46,11 @@ const AnimatorRoutes = () => {
                     <Route element={<AppLayout/>}>
                         <Route path={"/"} element={<Navigate replace to={"home"}/>}/>
                         <Route path={"home"} element={<Home/>}/>
-                        <Route path={"contact"} element={<Contact/>}/>
+                        {/*<Route path={"contact"} element={<Contact/>}/>*/}
                         <Route path={"courses"} element={<Courses/>}/>
                         <Route path={"projects"} element={<Projects/>}/>
-                        <Route path={"admin"} element={<AdminPage/>}/>
-                        <Route path={"education"} element={<EducationPage/>}/>
+                        {/*<Route path={"admin"} element={<AdminPage/>}/>*/}
+                        {/*<Route path={"education"} element={<EducationPage/>}/>*/}
                     </Route>
                 </Routes>
             </Suspense>

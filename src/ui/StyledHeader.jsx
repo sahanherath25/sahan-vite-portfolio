@@ -116,10 +116,10 @@ const StyledHeader = () => {
                     <FaArrowAltCircleRight size={20}  /> <Link onClick={closeHeader} to="/courses"> Courses</Link>
                 </MenuItem>
                 <MenuItem className={path === "/contact" ? "active" : ""}>
-                    <FaArrowAltCircleRight  size={20}  />  <Link onClick={closeHeader} to="/contact">Contact</Link>
+                    {/*<FaArrowAltCircleRight  size={20}  />  <Link onClick={closeHeader} to="/contact">Contact</Link>*/}
                 </MenuItem>
                 <MenuItem className={path === "/contact" ? "active" : ""}>
-                    <FaArrowAltCircleRight  size={20}  />  <Link onClick={closeHeader} to="/education">Education</Link>
+                    {/*<FaArrowAltCircleRight  size={20}  />  <Link onClick={closeHeader} to="/education">Education</Link>*/}
                 </MenuItem>
                 {/*<MenuItem className={path === "/test" ? "active" : ""}>*/}
                 {/*    <Link onClick={closeHeader} to="/Test">Test</Link>*/}

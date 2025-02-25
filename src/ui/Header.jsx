@@ -102,16 +102,16 @@ const Header = () => {
                     <Link to="/courses">Courses</Link>
                 </MenuItem>
                 <MenuItem className={path === "/contact" ? "active" : ""}>
-                    <Link to="/contact">Contact</Link>
+                    {/*<Link to="/contact">Contact</Link>*/}
                 </MenuItem>
                 <MenuItem className={path === "/test" ? "active" : ""}>
-                    <Link to="/Test">Test</Link>
+                    {/*<Link to="/Test">Test</Link>*/}
                 </MenuItem>
                 <MenuItem className={path === "/geoLocation" ? "active" : ""}>
-                    <Link to="/geoLocation">Location</Link>
+                    {/*<Link to="/geoLocation">Location</Link>*/}
                 </MenuItem>
                 <MenuItem className={path === "/education" ? "active" : ""}>
-                    <Link to="/education">Education</Link>
+                    {/*<Link to="/education">Education</Link>*/}
                 </MenuItem>
             </MenuList>
         </HeaderContainer>
