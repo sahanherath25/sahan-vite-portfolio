@@ -167,6 +167,19 @@ const Projects = () => {
 
 
     if (isLoading) return <Spinner/>
+    
+    const data1=[
+        {description:"This is a React Application for Pizza Ordering Website Using React",imageUrl:"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects/project2.jpeg", href:"https://crave-crust-sahan.netlify.app/"},
+        {imageUrl:"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects/Project1.jpeg", href:""},
+        {imageUrl:"", href:""},
+        {imageUrl:"", href:""}
+    ]
+
+    const data2=[
+        {description:"This is a Web Application using Next",imageUrl:"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects//next2.jpeg", href:"https://diana-25-portfolio.netlify.app/"},
+        {imageUrl:"", href:""},
+        {imageUrl:"", href:""}
+    ]
 
 
     return (
@@ -217,7 +230,9 @@ const Projects = () => {
                 </RightContainer>
             </ProjectContainer>
 
-            <Grid/>
+            <Grid title={"React Projects"} data={data1}/>
+
+            <Grid title={"Next Projects"} data={data2}/>
 
 
 
