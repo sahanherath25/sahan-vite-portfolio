@@ -221,7 +221,6 @@ const Skills = ({dataAOS1, dataAOS2, dataAOS3}) => {
                         deployment, and scalable infrastructure.
                         </P>
                         <StyledUl>
-                            <StyledLi>AWS (Amazon Web Services)</StyledLi>
                             <StyledLi> <FaArrowAltCircleLeft /> Microsoft Azure</StyledLi>
                             <StyledLi> <FaArrowAltCircleLeft /> Cloud Architecture Design</StyledLi>
                             <StyledLi>  <LiaAsymmetrik /> Infrastructure as a Service (IaaS)</StyledLi>

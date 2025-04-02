@@ -176,9 +176,9 @@ const Projects = () => {
     ]
 
     const data2=[
-        {description:"This is a Web Application using Next",imageUrl:"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects//next2.jpeg", href:"https://diana-25-portfolio.netlify.app/"},
-        {imageUrl:"", href:""},
-        {imageUrl:"", href:""}
+        {description:"Portfolio Project",imageUrl:"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects//next2.jpeg", href:"https://diana-25-portfolio.netlify.app/"},
+        {description:"BlogPost Application",imageUrl:"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects//next_project_blogpost.png", href:"https://insight-blog.vercel.app"},
+        {description:"Code Snippet",imageUrl:"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects//code-snippet.png", href:"https://advanced-code-snippet.vercel.app"}
     ]
 
 
