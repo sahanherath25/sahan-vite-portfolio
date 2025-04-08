@@ -181,9 +181,7 @@ const Projects = () => {
         {description:"Code Snippet",imageUrl:"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects//code-snippet.png", href:"https://advanced-code-snippet.vercel.app"}
     ]
 
-
     return (
-
 
         <StyledContainer
 
