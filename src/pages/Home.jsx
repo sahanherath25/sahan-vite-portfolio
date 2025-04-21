@@ -12,12 +12,11 @@ import ContactForm from "../ui/ContactForm.jsx";
 import WaveEnd from "../ui/WaveEnd.jsx";
 import Skills from "../features/skills/Skills.jsx";
 
-import{motion} from "framer-motion";
+import {motion} from "framer-motion";
 import WaterWave from "../VisualEffects/WaterWave.jsx";
 import WaterWaveWrapper from "../VisualEffects/WaterWave.jsx";
 import {getNewsData, myApiTours} from "../services/apiUser.js";
-
-
+import StickySidebar from "../ui/StickyHeader.jsx";
 
 
 const Home = () => {
@@ -26,14 +25,14 @@ const Home = () => {
         queryKey: ["users"],
         //TODO actual function to fetch data
         queryFn: myApiTours,
-        select:(data)=>{
-            return data.map((tour)=>{
+        select: (data) => {
+            return data.map((tour) => {
                 return tour.name
             })
         }
     })
 
-    console.log("SAHAN DATA ",cabins)
+    console.log("SAHAN DATA ", cabins)
 
 
     const projectSectionRef = useRef(null);
@@ -42,17 +41,17 @@ const Home = () => {
 
     const handleScrollToProjects = () => {
 
-        console.log("PROJEC REF" ,projectSectionRef)
+        console.log("PROJEC REF", projectSectionRef)
 
         if (projectSectionRef.current) {
-            projectSectionRef.current.scrollIntoView({ behavior: "smooth" });
+            projectSectionRef.current.scrollIntoView({behavior: "smooth"});
         }
     };
 
     const handleScrollToTechStack = () => {
 
         if (TechnologiesRef.current) {
-            TechnologiesRef.current.scrollIntoView({ behavior: "smooth" });
+            TechnologiesRef.current.scrollIntoView({behavior: "smooth"});
         }
     };
 
@@ -64,25 +63,31 @@ const Home = () => {
     }, [])
 
     return (
-               <motion.div
-                initial={{opacity:0}}
-                animate={{opacity:1}}
-                exit={{opacity:0}}
-            >
-                <div  data-aos={"zoom-in-down"} style={{
-                    backgroundImage:`url(${blobImage})`,
-                    backgroundRepeat:"no-repeat",
-                    backgroundSize:"cover",
-                }}>
-                    <Intro  handleClick={handleScrollToProjects} />
-                </div>
-                <ProjectsSection ref={projectSectionRef} sahan={true} techHandle={handleScrollToTechStack}/>
-                <Technologies  ref={TechnologiesRef}/>
-                <ContactForm/>
-                <Skills />
-                <WaveEnd/>
+        <motion.div
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+        >
 
-            </motion.div>
+            <StickySidebar
+                onScrollToProjects={handleScrollToProjects}
+                onScrollToTech={handleScrollToTechStack}
+            />
+
+            <div data-aos={"zoom-in-down"} style={{
+                backgroundImage: `url(${blobImage})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+            }}>
+                <Intro handleClick={handleScrollToProjects}/>
+            </div>
+            <ProjectsSection ref={projectSectionRef} sahan={true} techHandle={handleScrollToTechStack}/>
+            <Technologies ref={TechnologiesRef}/>
+            <ContactForm/>
+            <Skills/>
+            <WaveEnd/>
+
+        </motion.div>
 
 
     )

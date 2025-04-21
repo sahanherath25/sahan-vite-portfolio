@@ -16,6 +16,12 @@
   }
 }
 
+@mixin large-desktop {
+  @media (min-width: 1580px) {
+    @content;
+  }
+}
+
 
 @mixin btn-styles($text-color,$bg-color){
 

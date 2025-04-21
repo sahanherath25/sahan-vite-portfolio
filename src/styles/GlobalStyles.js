@@ -1,3 +1,4 @@
+
 import {createGlobalStyle} from "styled-components";
 
 
@@ -26,8 +27,7 @@ const GlobalStyles=createGlobalStyle`
     line-height: 1.5;
     font-size: 1.6rem;
   }
-
-
+  
   /* Reset line-height for structural elements */
   div, section, article, aside, header, footer {
     line-height: unset;
@@ -45,18 +45,13 @@ const GlobalStyles=createGlobalStyle`
     line-height: 1.5;
   }
 
-  a{
-    line-height: 1.5;
-  }
+  a{line-height: 1.5;}
 
-  li,ul{
-    line-height: 1.5;
-  }
+  li,ul{line-height: 1.5;}
   
-  a{
-    text-decoration: none;
-  }
+  a{text-decoration: none;}
   
 `
 
 export default GlobalStyles
+

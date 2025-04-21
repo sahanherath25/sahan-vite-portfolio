@@ -3,73 +3,75 @@ import {projectAnimation} from "../styles/animations.js";
 import breakpoints from "../styles/breakpoints.jsx";
 
 const StyledGridItem = styled.div`
+    
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    margin: 5px;
 
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+    }
 
-  //border: 1px solid aquamarine;
-  display: flex;
-  height: 300px;
-  flex-direction: column;
-  gap: 2px;
-  position: relative;
-  margin: 2px;
-    //animation: ${projectAnimation} 10s linear infinite;
-
-  &:hover {
-    animation-play-state: paused;
-  }
-
-
-    // ${breakpoints.desktop(css`
-  //   animation: ${projectAnimation} 10s linear infinite;
-  // `)}
-
+    height: 300px;
+    display: flex;
+    flex-direction: column;
 
 `
 
 const StyledImageContainer = styled.div`
-  //flex-grow: 1;
-  height: 100%`
-
-
+    flex: 1;
+    height: 100%;
+`
 const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+
+    ${StyledGridItem}:hover & {
+        transform: scale(1.1);
+    }
 `
 
 const StyledContentWrapper = styled.div`
 
-  background-color: #f6f6f6;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 
-  background-color: rgba(0, 0, 0, 0.8);
-  height: 100%;
-  color: white;
-  font-weight: 500;
-  border-radius: 10px;
-  transition: all 500ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
 
+    ${StyledGridItem}:hover & {
+        opacity: 1;
+    }
 
-  &:hover {
-    opacity: 0.7;
-    background-color: rgba(0, 0, 0, 0.1);
+    h1, h3 {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        color: #00FF9C;
+    }
 
     p {
-      color: white;
+        font-size: 0.9rem;
+        color: #eaeaea;
     }
-  }
-
 `
 
 const H1 = styled.h1`
@@ -95,9 +97,18 @@ const handleHover = () => {
 }
 
 const StyledLink = styled.a`
-  color: black;
-  background-color: #00FF9C;
-  padding: 10px;
+    background-color: #FFA955;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    //margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #00e88c;
+    }
 `
 
 
@@ -116,7 +127,7 @@ function GridItem({imgSrc, heading = "Project", href, description}) {
                             <StyledContentWrapper>
 
                                 {href?
-                                    <StyledLink target={"_blank"} href={href}><H1> View {heading}</H1> </StyledLink>
+                                    <StyledLink target={"_blank"} href={href}> View {heading}</StyledLink>
                                     :
                                     <H1 as={"h3"}>{heading}</H1>}
 

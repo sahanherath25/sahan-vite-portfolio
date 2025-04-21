@@ -45,7 +45,7 @@ const AppLayout = () => {
         <StyledAppLayout>
             <StyledHeader/>
             <Main>
-                <Container classNAme={"test"}  >
+                <Container  >
                     <Outlet/>
                 </Container>
                 <Footer/>

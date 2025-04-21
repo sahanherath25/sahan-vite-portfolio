@@ -28,9 +28,6 @@ const queryClient = new QueryClient({
 
 function App() {
 
-    // useEffect(()=>{
-    //     new AOSConfig()
-    // })
     return (
         <>
             <QueryClientProvider client={queryClient}>

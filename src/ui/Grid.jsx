@@ -5,6 +5,7 @@ import initAOS from "../aos/aos.js";
 
 import AOS from "aos";
 import breakpoints from "../styles/breakpoints.jsx";
+import {nanoid} from "nanoid";
 
 
 const StyledGrid = styled.section`
@@ -66,6 +67,7 @@ const Grid = ({data, title,}) => {
 
                                 return (
                                     <GridItem
+                                        key={nanoid(14)}
                                         description={item.description}
                                         href={item.href}
                                         imgSrc={item.imageUrl}/>
