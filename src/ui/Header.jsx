@@ -50,7 +50,7 @@ const Nav = styled.nav`
 `;
 
 const NavItem = styled(Link)`
-    font-size: 1.1rem;
+    font-size: 2rem !important;
     color: ${({ $active }) => ($active ? "#00d8ff" : "#ffffffb3")};
     text-decoration: none;
     font-weight: ${({ $active }) => ($active ? "bold" : "normal")};

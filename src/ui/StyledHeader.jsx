@@ -93,7 +93,7 @@ const Nav = styled.nav`
 
 // Navigation Item
 const NavItem = styled(Link)`
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color: ${({ $active }) => ($active ? "#00d8ff" : "#ffffffb3")};
     font-weight: ${({ $active }) => ($active ? "bold" : "normal")};
     text-decoration: none;
@@ -120,7 +120,7 @@ const Header = () => {
     const { pathname } = useLocation();
 
     const links = [
-        { path: "/", label: "Home" },
+        { path: "/home", label: "Home" },
         { path: "/projects", label: "Projects" },
         { path: "/courses", label: "Courses" },
         { path: "/contact", label: "Contact" },
