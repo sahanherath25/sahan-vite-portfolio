@@ -21,6 +21,7 @@ const AdminPage = lazy(() => import("../pages/AdminPage.jsx"))
 const Projects = lazy(() => import("../pages/Projects.jsx"))
 const AppLayout = lazy(() => import("../ui/AppLayout.jsx"))
 const EducationPage = lazy(() => import("../pages/Education.jsx"))
+const ProjectDetailPage = lazy(() => import("../pages/ProjectDetailPage.jsx"))
 
 
 const ScrollToTop = () => {
@@ -49,6 +50,7 @@ const AnimatorRoutes = () => {
                         {/*<Route path={"contact"} element={<Contact/>}/>*/}
                         <Route path={"courses"} element={<Courses/>}/>
                         <Route path={"projects"} element={<Projects/>}/>
+                        <Route path={"projects/projects-detail"} element={<ProjectDetailPage/>}/>
                         {/*<Route path={"admin"} element={<AdminPage/>}/>*/}
                         {/*<Route path={"education"} element={<EducationPage/>}/>*/}
                     </Route>

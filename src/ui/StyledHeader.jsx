@@ -122,9 +122,9 @@ const Header = () => {
     const links = [
         { path: "/home", label: "Home" },
         { path: "/projects", label: "Projects" },
-        { path: "/courses", label: "Courses" },
-        { path: "/contact", label: "Contact" },
-        { path: "/education", label: "Education" }
+        // { path: "/courses", label: "Courses" },
+        // { path: "/contact", label: "Contact" },
+        // { path: "/education", label: "Education" }
     ];
 
     return (

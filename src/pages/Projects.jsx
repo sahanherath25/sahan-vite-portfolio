@@ -178,7 +178,13 @@ const Projects = () => {
     const data2=[
         {description:"Portfolio Project",imageUrl:"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects//next2.jpeg", href:"https://diana-25-portfolio.netlify.app/"},
         {description:"BlogPost Application",imageUrl:"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects//next_project_blogpost.png", href:"https://insight-blog.vercel.app"},
-        {description:"Code Snippet",imageUrl:"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects//code-snippet.png", href:"https://advanced-code-snippet.vercel.app"}
+        {description:"Code Snippet",imageUrl:"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects//code-snippet.png", href:"https://advanced-code-snippet.vercel.app"},
+        {description:"Discord App",imageUrl:"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects//discord-app.png", href:"https://discord-app-pi.vercel.app/"}
+    ]
+
+    const data3=[
+        {description:"",imageUrl:"https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects//next2.jpeg", href:"https://diana-25-portfolio.netlify.app/"}
+
     ]
 
     return (
@@ -231,6 +237,8 @@ const Projects = () => {
             <Grid title={"React Projects"} data={data1}/>
 
             <Grid title={"Next Projects"} data={data2}/>
+
+            <Grid title={"Mern Stack Projects"} data={data3}/>
 
 
 

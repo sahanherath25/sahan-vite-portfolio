@@ -61,7 +61,7 @@ const FooterLinks = styled.div`
     transition: all 0.3s ease;
 
     &:hover {
-      animation: ${glow} 0.6s infinite alternate;
+      //animation: ${glow} 0.6s infinite alternate;
       transform: scale(1.1);
     }
   }
@@ -88,7 +88,7 @@ const PoweredByText = styled.div`
   font-size: 1rem;
   color: orangered;
   font-weight: bold;
-  animation: ${blink} 1s infinite;
+  //animation: ${blink} 1s infinite;
   align-self: center;
 `;
 
