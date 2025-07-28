@@ -1,20 +1,10 @@
 import React from 'react';
-import {
-    Box,
-    Typography,
-    Chip,
-    Divider,
-    Card,
-    CardMedia,
-    Stack,
-    Button,
-} from "@mui/material";
-import {useParams} from "react-router-dom";
+import {Box, Typography, Divider, Card, CardMedia, Stack, Button,} from "@mui/material";
 
 const projects = [
     {
         id: "campus-connect",
-        name: "Campus Connect",
+        name: "Web Server And API",
         image: "https://mtuxinxjrxvkdupfsauk.supabase.co/storage/v1/object/public/projects//discord-app.png",
         intro: "A social platform for students to connect and collaborate within the campus.",
         duration: "Jan 2024 - Mar 2024",
@@ -43,11 +33,12 @@ function ProjectDetailPage() {
     if (!project) return <Typography>Project not found.</Typography>;
 
     return (
-        <Box sx={{ p: 4, width: "100%", margin: "auto" }}>
+        <Box sx={{ p: 4, width: "50%", margin: "auto" }}>
+
             <Card sx={{ mb: 4, borderRadius: 4, overflow: "hidden" }}>
                 <CardMedia
                     component="img"
-                    height="400"
+                    height="300"
                     image={project.image}
                     alt={project.name}
                     objectFit="cover"
@@ -77,7 +68,7 @@ function ProjectDetailPage() {
             </Stack>
 
             <Box mt={4}>
-                <Button variant="contained" href="https://github.com/yourproject" target="_blank">
+                <Button sx={{marginInlineEnd:2}} variant="contained" href="https://github.com/yourproject" target="_blank">
                     View Demo
                 </Button>
                 <Button variant="contained" href="https://github.com/yourproject" target="_blank">

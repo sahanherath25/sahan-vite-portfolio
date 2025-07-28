@@ -4,16 +4,9 @@ import {BrowserRouter, Route, Routes, Navigate, useLocation} from "react-router-
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
 import GlobalStyles from "./styles/GlobalStyles.js";
-import initAOS from "./aos/aos.js";
 import "./styles/mixins/_mixins.scss"
-import Test from "./pages/Test.jsx";
-import AOSConfig from "./aos/aos.js";
-
-import AnimatedCursor from "react-animated-cursor";
 import React from "react";
 import AnimatorRoutes from "./pages/AnimatorRoutes.jsx";
-import WaterWaveComponent from "./VisualEffects/WaterWave.jsx";
-import WaterWaveWrapper from "./VisualEffects/WaterWave.jsx";
 
 import { Toaster } from "react-hot-toast";
 
@@ -63,15 +56,3 @@ function App() {
 }
 
 export default App
-
-// <BrowserRouter>
-// <Routes>
-// <Route element={<AppLayout/>}>
-// <Route path={"/"} element={<Navigate replace to={"home"}/>}/>
-// <Route path={"home"} element={<Home/>}/>
-// <Route path={"contact"} element={<Contact/>}/>
-// <Route path={"courses"} element={<Courses/>}/>
-// <Route path={"projects"} element={<Projects/>}/>
-// </Route>
-// </Routes>
-// </BrowserRouter>
