@@ -145,11 +145,13 @@ const RightContainer = styled.div`
 
 const H1 = styled.h1`
   font-size: 40px;
+    color: navajowhite;
 `
 
 const H3 = styled.h3`
-  font-size: 30px;
-  opacity: 0.8;
+    font-size: 30px;
+    opacity: 0.8;
+    color: navajowhite;
 `
 
 const P = styled.p`

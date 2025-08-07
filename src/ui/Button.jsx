@@ -5,14 +5,20 @@ const StyledButton = styled.button`
 
 
   ${(props) => props.variation === "primary" && css`
-    background-color: whitesmoke;
-    font-weight: bold;
-    height: 45px;
-    border-radius: 20px;
-    border: none;
-    padding: .5rem 1rem;
-    font-size: 1.5rem;
-    width: 50%;
+      background-color: whitesmoke;
+      font-weight: bold;
+      height: 45px;
+      border-radius: 20px;
+      border: none;
+      padding: .5rem 1rem;
+      font-size: 1.5rem;
+      width: 100%;
+      margin-block-end: 50px;
+
+      @media (min-width: 767px) {
+          width: 50%;
+      }
+
   `}
   &:hover {
     cursor: pointer;

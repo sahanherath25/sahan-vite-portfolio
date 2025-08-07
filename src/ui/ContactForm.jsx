@@ -54,14 +54,19 @@ const LeftContainer = styled.div`
 `
 
 const FormContainer = styled.div`
-
-  width: 70%;
+    
+    width: 100%;
   margin: 0 auto;
   background-color: #001220;
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1fr 1fr;
   padding: 40px 60px;
+
+    @media (min-width: 767px) {
+        width: 70%;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+       
+    }
 `
 
 const RightContainer = styled.div`

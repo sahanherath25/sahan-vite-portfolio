@@ -27,12 +27,17 @@ import {IoLogoJavascript} from "react-icons/io";
 
 const StyledContainer = styled.section`
 
-  display: flex;
-  flex-wrap: wrap;
-  width: 1200px;
-  margin: 50px auto;
-  //border: 1px solid red;
-  flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto;
+    width: 100%;
+    //border: 1px solid red;
+    flex-direction: column;
+
+    @media (max-width: 767px) {
+        min-width: 1200px;
+    }
+
 `
 
 

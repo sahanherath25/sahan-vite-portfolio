@@ -26,8 +26,9 @@ const StyledContainer = styled(motion.section)`
   text-align: center;
   color: whitesmoke;
   background-color: #001220;
-  padding-block-end: 200px;
+  //padding-block-end: 200px;
   padding-block-start: 100px;
+    
   ${breakpoints.desktop(css`
     display: grid;
     justify-content: center;
